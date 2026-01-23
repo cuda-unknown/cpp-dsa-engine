@@ -48,5 +48,21 @@ int main() {
         cout << "Array Status: The array is NOT sorted." << endl;
     }
 
+    string name = "abcde";
+    string original = name; 
+    
+    reverseString(name, 0, name.length() - 1);
+    cout << "Original: " << original << "  Reversed: " << name << endl;
+
+    if(isPalindrome(name, 0, name.length() - 1)) {
+        cout << name << " is a Palindrome" << endl;
+    } else {
+        cout << name << " is NOT a Palindrome" << endl;
+    }
+    
+    int a = 2, b = 10;
+    long long ans = power(a, b);
+    cout << a << " to the power of " << b << " is: " << ans << endl;
+
     return 0;
 }

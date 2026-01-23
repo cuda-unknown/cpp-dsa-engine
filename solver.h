@@ -79,4 +79,29 @@ bool isSorted(int arr[], int size) {
     }
 }
 
+// Using Recursion to Reverse String 
+void reverseString(string& s, int i, int j) {
+    if(i > j) return;
+    swap(s[i], s[j]);
+    reverseString(s, i + 1, j - 1);
+}
+
+//  Recursive Palindrome Check
+bool isPalindrome(string s, int i, int j) {
+    if(i > j) return true;
+    if(s[i] != s[j]) return false;
+    return isPalindrome(s, i + 1, j - 1);
+}
+
+//  Optimized Power Function (a^b)
+long long power(int a, int b) {
+    if(b == 0) return 1;
+    if(b == 1) return a;
+    
+    long long ans = power(a, b/2);
+    
+    if(b % 2 == 0) return ans * ans; 
+    else return a * ans * ans;       
+}
+
 #endif
