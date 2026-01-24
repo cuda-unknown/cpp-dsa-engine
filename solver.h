@@ -1,6 +1,6 @@
 #ifndef SOLVER_H
 #define SOLVER_H
-
+#include<algorithm>
 #include <string>
 using namespace std;
 
@@ -44,6 +44,16 @@ bool binarySearch(int *arr, int s, int e , int k ) {
     }
 }
 
+void bubbleSort(int arr2[],int n){
+    if(n==0||n==1) return ;
+    for(int i=0;i<n-1;i++){
+        if(arr2[i]>arr2[i+1]){
+            swap(arr2[i],arr2[i+1]);
+        }
+    }
+    bubbleSort(arr2,n-1);
+}
+
 bool linearSearch(int arr[], int size, int k ) {
    
     if(size == 0) return false;
@@ -85,6 +95,10 @@ void reverseString(string& s, int i, int j) {
     swap(s[i], s[j]);
     reverseString(s, i + 1, j - 1);
 }
+ //Fast for Reversing String 
+ void reverseStringFast(string&sa){
+    reverse(sa.begin(),sa.end());
+ }
 
 //  Recursive Palindrome Check
 bool isPalindrome(string s, int i, int j) {

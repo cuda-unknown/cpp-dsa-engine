@@ -30,6 +30,15 @@ int main() {
         cout << "Binary Search: Element " << key << " NOT found." << endl;
     }
 
+    int arr2[]={4,9,7,3,5,2,0,1};
+    int n=8;
+    bubbleSort(arr2,n);
+    cout<<"Sorted Array is :"<<endl;
+    for(int i = 0; i < n; i++) {
+        cout << arr2[i] << " ";
+    }
+    cout << endl;
+
     // 2. Linear Search
     if(linearSearch(arr, size, key)) {
         cout << "Linear Search: Element " << key << " FOUND!" << endl;
@@ -53,6 +62,11 @@ int main() {
     
     reverseString(name, 0, name.length() - 1);
     cout << "Original: " << original << "  Reversed: " << name << endl;
+    
+    string sa="abcdeedcb";
+    string Real=sa;
+    reverseStringFast(sa);
+    cout<<"Real string is:"<<Real<<" "<<"Fast reverse is:"<<sa <<endl;
 
     if(isPalindrome(name, 0, name.length() - 1)) {
         cout << name << " is a Palindrome" << endl;
