@@ -16,6 +16,7 @@ void showMenu() {
     cout << "9. Fast String Reversal (STL)" << endl;
     cout << "10. Palindrome " << endl;
     cout << "11. Power of X Check" << endl;
+    cout << "12. Merge Sort" <<endl;
     cout << "0. Exit" << endl;
     cout << "Enter choice: ";
 }
@@ -130,6 +131,16 @@ int main() {
     int a = 2, b = 10;
     long long ans = power(a, b);
     cout << a << " to the power of " << b << " is: " << ans << endl;
+    break;
+    }
+
+    case 12: {
+    int arr[] = {3, 41, 52, 26, 38, 57, 9, 49};
+    int n = 8;
+    mergeSort(arr, 0, n - 1);
+    cout << "Merge Sorted Array: ";
+    for(int i = 0; i < n; i++) cout << arr[i] << " ";
+    cout << endl;
     break;
     }
 
