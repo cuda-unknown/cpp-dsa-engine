@@ -17,6 +17,7 @@ void showMenu() {
     cout << "10. Palindrome " << endl;
     cout << "11. Power of X Check" << endl;
     cout << "12. Merge Sort" <<endl;
+    cout << "13. Quick Sort" <<endl;
     cout << "0. Exit" << endl;
     cout << "Enter choice: ";
 }
@@ -144,6 +145,16 @@ int main() {
     break;
     }
 
+    case 13:{
+        int arr[]={24, 18, 38, 43, 14, 40, 1, 54};
+        int n=8;
+        quickSort(arr, 0, n - 1);
+        cout << "Quick Sorted Array: ";
+        for(int i = 0; i < n; i++) cout << arr[i] << " ";
+        cout << endl;
+        break;
+    }
+    
     default: {
         cout<<"Invalid choice!"<<endl;
         break;

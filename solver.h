@@ -172,4 +172,49 @@ void mergeSort(int arr[], int s, int e) {
     merge(arr, s, e);
 }
 
+
+int partition(int arr[], int s, int e) {
+    int pivot = arr[s];
+
+    // step1: count elements smaller than pivot
+    int cnt = 0;
+    for (int i = s + 1; i <= e; i++) {
+        if (arr[i] <= pivot) {
+            cnt++;
+        }
+    }
+
+    // step 2: place pivot at its right position
+    int pivotIndex = s + cnt;
+    swap(arr[pivotIndex], arr[s]);
+
+    // step 3: handle left and right parts (left < pivot, right > pivot)
+    int i = s, j = e;
+    while (i < pivotIndex && j > pivotIndex) {
+        while (arr[i] <= pivot) {
+            i++;
+        }
+        while (arr[j] > pivot) {
+            j--;
+        }
+        if (i < pivotIndex && j > pivotIndex) {
+            swap(arr[i++], arr[j--]);
+        }
+    }
+    return pivotIndex;
+}
+
+void quickSort(int arr[], int s, int e) {
+    // base case
+    if (s >= e) return;
+
+    // partitioning
+    int p = partition(arr, s, e);
+
+    // sort left part
+    quickSort(arr, s, p - 1);
+
+    // sort right part
+    quickSort(arr, p + 1, e);
+}
 #endif
