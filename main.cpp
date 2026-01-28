@@ -18,6 +18,7 @@ void showMenu() {
     cout << "11. Power of X Check" << endl;
     cout << "12. Merge Sort" <<endl;
     cout << "13. Quick Sort" <<endl;
+    cout << "14. Subsets" <<endl;
     cout << "0. Exit" << endl;
     cout << "Enter choice: ";
 }
@@ -155,6 +156,22 @@ int main() {
         break;
     }
     
+    case 14: {
+    vector<int> nums = {1, 2, 3};
+    vector<vector<int>> ans;
+    vector<int> output;
+    solveSubsets(nums, output, 0, ans);
+    
+    cout << "Subsets are: " << endl;
+    for (const auto& subset : ans) {
+        cout << "{ ";
+        for (int x : subset) cout << x << " ";
+        cout << "} ";
+    }
+    cout << endl;
+    break;
+    }
+
     default: {
         cout<<"Invalid choice!"<<endl;
         break;

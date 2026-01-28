@@ -2,6 +2,8 @@
 #define SOLVER_H
 #include<algorithm>
 #include <string>
+#include<vector>
+
 using namespace std;
 
 bool isAnagram(string s, string t) {
@@ -217,4 +219,24 @@ void quickSort(int arr[], int s, int e) {
     // sort right part
     quickSort(arr, p + 1, e);
 }
+
+ //subsets
+void solveSubsets(vector<int> nums, vector<int> output, int index, vector<vector<int> >& ans) {
+        //base case
+    if(index >= nums.size()) {
+        ans.push_back(output);
+        return ;
+    }
+        
+        //exclude
+    solveSubsets(nums, output, index+1, ans);
+        
+        //include
+    int element = nums[index];
+    output.push_back(element);
+    solveSubsets(nums, output, index+1, ans);
+        
+}
+
+
 #endif
