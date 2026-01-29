@@ -4,22 +4,23 @@
 using namespace std;
 
 void showMenu() {
-    cout << "\n--- CPP DSA ENGINE ---" << endl;
-    cout << "1. Anagram" << endl;
-    cout << "2. Construct" << endl;
-    cout << "3. Binary Search" << endl;
-    cout << "4. Recursive Bubble Sort" << endl;
-    cout << "5. Lineaar Search" << endl;
-    cout << "6. Get Sum" << endl;
-    cout << "7. Check If Sorted" << endl;
-    cout << "8. Reverse String " << endl;
-    cout << "9. Fast String Reversal (STL)" << endl;
-    cout << "10. Palindrome " << endl;
-    cout << "11. Power of X Check" << endl;
+    cout << "\n--- CPP DSA ENGINE ---" <<endl;
+    cout << "1. Anagram" <<endl;
+    cout << "2. Construct" <<endl;
+    cout << "3. Binary Search" <<endl;
+    cout << "4. Recursive Bubble Sort" <<endl;
+    cout << "5. Lineaar Search" <<endl;
+    cout << "6. Get Sum" <<endl;
+    cout << "7. Check If Sorted" <<endl;
+    cout << "8. Reverse String " <<endl;
+    cout << "9. Fast String Reversal (STL)" <<endl;
+    cout << "10. Palindrome " <<endl;
+    cout << "11. Power of X Check" <<endl;
     cout << "12. Merge Sort" <<endl;
     cout << "13. Quick Sort" <<endl;
     cout << "14. Subsets" <<endl;
-    cout << "0. Exit" << endl;
+    cout << "15. Keypad PRoblem" <<endl;
+    cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
 
@@ -170,6 +171,28 @@ int main() {
     }
     cout << endl;
     break;
+    }
+
+    case 15: {
+    string digits;
+    cout << "Enter digits (2-9): ";
+    cin >> digits;
+
+    vector<string> combinations = letterCombinations(digits);
+
+    cout << "Possible combinations for '" << digits << "':" << endl;
+    if (combinations.empty()) {
+        cout << "[Empty Input or No Combinations]" << endl;
+    } else {
+        for (int i = 0; i < combinations.size(); i++) {
+            cout << combinations[i] << (i == combinations.size() - 1 ? "" : ", ");
+            // Adding a newline every 6 combinations to keep it readable
+            if ((i + 1) % 6 == 0) cout << endl;
+        }
+    }
+    cout << "\nTotal combinations: " << combinations.size() << endl;
+    break;
+    
     }
 
     default: {
