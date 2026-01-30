@@ -264,13 +264,34 @@ vector<string> letterCombinations(string digits) {
     if(digits.length()==0)
         return ans;
 
-        string output;
-        int index = 0;
+    string output;
+    int index = 0;
 
-        string mapping[10] = {"", "", "abc", "def", "ghi", "jkl","mno","pqrs","tuv","wxyz"};
-        solve(digits, output, index, ans, mapping);
+    string mapping[10] = {"", "", "abc", "def", "ghi", "jkl","mno","pqrs","tuv","wxyz"};
+    solve(digits, output, index, ans, mapping);
         
-        return ans;
+    return ans;
 
+}
+
+void solvepermute(vector<int>& nums, vector<vector<int>>& ans, int index) {
+    if (index >= nums.size()) {
+        ans.push_back(nums);
+        return;
     }
+
+    for (int j = index; j < nums.size(); j++) {
+        swap(nums[index], nums[j]);      
+        solvepermute(nums, ans, index + 1); 
+        swap(nums[index], nums[j]);     
+    }
+}
+
+vector<vector<int>> permute(vector<int>& nums) {
+    vector<vector<int>> ans;
+    solvepermute(nums, ans, 0);
+    return ans;
+}
+
+
 #endif

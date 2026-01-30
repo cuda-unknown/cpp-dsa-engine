@@ -20,6 +20,7 @@ void showMenu() {
     cout << "13. Quick Sort" <<endl;
     cout << "14. Subsets" <<endl;
     cout << "15. Keypad PRoblem" <<endl;
+    cout << "16. Permutation" <<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -193,6 +194,27 @@ int main() {
     cout << "\nTotal combinations: " << combinations.size() << endl;
     break;
     
+    }
+    
+    case 16:{
+    
+    int count;
+    cout << "How many numbers do you want to permute? (Keep it small, e.g., 3): ";
+    cin >> count;
+
+    vector<int> nums(count);
+    cout << "Enter the " << count << " numbers: ";
+    for(int i = 0; i < count; i++) cin >> nums[i];
+
+    vector<vector<int>> result = permute(nums);
+
+    cout << "Total Permutations: " << result.size() << endl;
+    for (const auto& row : result) {
+        cout << "[ ";
+        for (int x : row) cout << x << " ";
+        cout << "] " << endl;
+    }
+    break;
     }
 
     default: {
