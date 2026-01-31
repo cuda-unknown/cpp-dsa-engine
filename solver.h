@@ -238,8 +238,8 @@ void solveSubsets(vector<int> nums, vector<int> output, int index, vector<vector
         
 }
 
-void solve(string digit, string output, int index, vector<string>& ans, string mapping[] ) {
-        
+// Keypad Problem
+void solveletter(string digit, string output, int index, vector<string>& ans, string mapping[] ) {     
     //base case
     if(index >= digit.length()) {
         ans.push_back(output);
@@ -251,12 +251,10 @@ void solve(string digit, string output, int index, vector<string>& ans, string m
         
     for(int i=0; i<value.length(); i++) {
         output.push_back(value[i]);
-        solve(digit, output, index+1, ans, mapping);
+        solveletter(digit, output, index+1, ans, mapping);
         output.pop_back();
-    }
-        
+    }     
 }
-
 vector<string> letterCombinations(string digits) {
     
     vector<string> ans;
@@ -268,12 +266,12 @@ vector<string> letterCombinations(string digits) {
     int index = 0;
 
     string mapping[10] = {"", "", "abc", "def", "ghi", "jkl","mno","pqrs","tuv","wxyz"};
-    solve(digits, output, index, ans, mapping);
+    solveletter(digits, output, index, ans, mapping);
         
     return ans;
-
 }
 
+// Permutation
 void solvepermute(vector<int>& nums, vector<vector<int>>& ans, int index) {
     if (index >= nums.size()) {
         ans.push_back(nums);
@@ -286,12 +284,64 @@ void solvepermute(vector<int>& nums, vector<vector<int>>& ans, int index) {
         swap(nums[index], nums[j]);     
     }
 }
-
 vector<vector<int>> permute(vector<int>& nums) {
     vector<vector<int>> ans;
     solvepermute(nums, ans, 0);
     return ans;
 }
 
+// Rat in Maze
+
+bool issafe(int x,int y,int n,vector<vector<int>> &visited,vector<vector<int>>& m){
+    if( (x>=0 && x<n) && (y>=0 && y<n) && visited[x][y]==0 && m[x][y]==1){
+        return true;
+    }else {
+        return false;
+    }
+}
+void solveMaze(vector<vector<int>>& m,int n, vector<string> &ans, int x,int y,vector<vector<int>>&visited,string path ){
+    if(x==n-1 && y==n-1){
+        ans.push_back(path);
+        return;
+    }
+
+    visited[x][y]=1;
+
+    int dx[] = {1, 0, 0, -1};
+    int dy[] = {0, -1, 1, 0};
+
+    char dir[] = {'D', 'L', 'R', 'U'};
+
+    for (int i = 0; i < 4; i++) {
+        int nextX = x + dx[i];
+        int nextY = y + dy[i];
+
+        if (issafe(nextX, nextY, n, visited, m)) {
+            path.push_back(dir[i]);
+            solveMaze(m, n, ans, nextX, nextY, visited, path);
+            path.pop_back();
+        }
+    }
+    visited[x][y]=0;
+}
+vector<string> findPath(vector<vector<int>>& m, int n) {
+    vector<string> ans;
+    if(m[0][0] == 0 || m[n-1][n-1] == 0)  return ans;
+
+    int srcx = 0;
+    int srcy = 0;
+
+    vector<vector<int>> visited = m;
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < n; j++) {
+            visited[i][j] = 0;
+        }
+    }
+    string path = "";
+
+    solveMaze(m, n, ans, srcx, srcy, visited, path);
+    sort(ans.begin(), ans.end());
+    return ans;
+}
 
 #endif

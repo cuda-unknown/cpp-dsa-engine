@@ -21,6 +21,7 @@ void showMenu() {
     cout << "14. Subsets" <<endl;
     cout << "15. Keypad PRoblem" <<endl;
     cout << "16. Permutation" <<endl;
+    cout << "17. Rat in a maze" << endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -193,7 +194,6 @@ int main() {
     }
     cout << "\nTotal combinations: " << combinations.size() << endl;
     break;
-    
     }
     
     case 16:{
@@ -213,6 +213,25 @@ int main() {
         cout << "[ ";
         for (int x : row) cout << x << " ";
         cout << "] " << endl;
+    }
+    break;
+    }
+
+    case 17: {
+    int n;
+    cout << "Enter Maze size (N): "; 
+    cin >> n;
+    vector<vector<int>> maze(n, vector<int>(n));
+    cout << "Enter Maze (0/1):" << endl;
+
+    for(int i=0; i<n; i++) for(int j=0; j<n; j++) cin >> maze[i][j];
+
+    vector<string> paths = findPath(maze, n);
+
+    if(paths.empty()) cout << "No paths exist!" << endl;
+    else {
+        for(string p : paths) cout << p << " ";
+        cout << endl;
     }
     break;
     }
