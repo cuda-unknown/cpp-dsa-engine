@@ -22,6 +22,7 @@ void showMenu() {
     cout << "15. Keypad PRoblem" <<endl;
     cout << "16. Permutation" <<endl;
     cout << "17. Rat in a maze" << endl;
+    cout << "18. Count Prime" <<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -233,6 +234,14 @@ int main() {
         for(string p : paths) cout << p << " ";
         cout << endl;
     }
+    break;
+    }
+
+    case 18: {
+    int n;
+    cout << "Enter a number to count primes up to: ";
+    cin >> n;
+    cout << "Number of primes: " << countPrimes(n) << endl;
     break;
     }
 
