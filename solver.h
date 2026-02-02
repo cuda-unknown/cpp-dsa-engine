@@ -109,7 +109,7 @@ bool isPalindrome(string s, int i, int j) {
     return isPalindrome(s, i + 1, j - 1);
 }
 
-//  Optimized Power Function (a^b)
+//Power Function (a^b)
 long long power(int a, int b) {
     if(b == 0) return 1;
     if(b == 1) return a;
@@ -164,6 +164,7 @@ void merge(int arr[], int s, int e) {
     delete[] second;
 }
 
+//Merge Sort 
 void mergeSort(int arr[], int s, int e) {
     if(s >= e) return;
 
@@ -206,6 +207,7 @@ int partition(int arr[], int s, int e) {
     return pivotIndex;
 }
 
+//Quick Sort
 void quickSort(int arr[], int s, int e) {
     // base case
     if (s >= e) return;
@@ -344,6 +346,7 @@ vector<string> findPath(vector<vector<int>>& m, int n) {
     return ans;
 }
 
+//Sieve of E
 int countPrimes(int n) {
     if (n <= 2) return 0;
     vector<bool> prime(n, true);
@@ -359,5 +362,24 @@ int countPrimes(int n) {
     }
     return count;
 }
+
+// Longest Common Prefix
+string longestCommonPrefix(vector<string>& strs) {
+    string ans = "";
+    if(strs.empty()) return ans;
+    sort(strs.begin(), strs.end());
+
+    string first = strs[0],last = strs[strs.size() - 1];
+
+    for(int i = 0; i < first.length(); i++) {
+        if(first[i] == last[i]) {
+            ans += first[i];
+        } else {
+            break; 
+        }
+    }
+    return ans;
+} 
+
 
 #endif

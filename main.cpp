@@ -23,6 +23,7 @@ void showMenu() {
     cout << "16. Permutation" <<endl;
     cout << "17. Rat in a maze" << endl;
     cout << "18. Count Prime" <<endl;
+    cout << "19. Longest Common Prefix"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -245,13 +246,30 @@ int main() {
     break;
     }
 
+    case 19: { 
+    int n;
+    cout << "How many strings? ";
+    cin >> n;
+    vector<string> strs(n);
+    cout<<"----Please keep your string lowercase---"<<endl;
+    cout<<endl;
+    cout << "Enter the strings:" << endl;
+    for(int i=0; i<n; i++) cin >> strs[i];
+    
+    string prefix = longestCommonPrefix(strs);
+    if(prefix.empty()) cout << "No common prefix found." << endl;
+    else cout << "Longest Common Prefix: " << prefix << endl;
+    break;
+    }
+
     default: {
         cout<<"Invalid choice!"<<endl;
         break;
     }
   
     }  
-}  while(choice>0);
+    
+    }  while(choice>0);
 
     return 0;
 }
