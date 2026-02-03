@@ -24,6 +24,7 @@ void showMenu() {
     cout << "17. Rat in a maze" << endl;
     cout << "18. Count Prime" <<endl;
     cout << "19. Longest Common Prefix"<<endl;
+    cout << "20. Roman to Integers"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -259,6 +260,14 @@ int main() {
     string prefix = longestCommonPrefix(strs);
     if(prefix.empty()) cout << "No common prefix found." << endl;
     else cout << "Longest Common Prefix: " << prefix << endl;
+    break;
+    }
+
+    case 20: { // Roman to Integer
+    string s;
+    cout << "Enter Roman Numeral (e.g., LV): ";
+    cin >> s;
+    cout << "Integer Value: " << romanToInt(s) << endl;
     break;
     }
 
