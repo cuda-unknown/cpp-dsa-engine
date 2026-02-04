@@ -25,6 +25,7 @@ void showMenu() {
     cout << "18. Count Prime" <<endl;
     cout << "19. Longest Common Prefix"<<endl;
     cout << "20. Roman to Integers"<<endl;
+    cout << "21.Max Gold "<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -270,6 +271,20 @@ int main() {
     cout << "Integer Value: " << romanToInt(s) << endl;
     break;
     }
+
+    case 21: {
+    int r, c;
+    cout << "Enter Grid dimensions (Rows Cols): ";
+    cin >> r >> c;
+    vector<vector<int>> grid(r, vector<int>(c));
+    cout << "Enter Gold values for each cell:" << endl;
+    for(int i=0; i<r; i++) 
+        for(int j=0; j<c; j++) cin >> grid[i][j];
+
+    cout << "Maximum Gold Collected: " << getMaximumGold(grid) << endl;
+    break;
+}
+
 
     default: {
         cout<<"Invalid choice!"<<endl;

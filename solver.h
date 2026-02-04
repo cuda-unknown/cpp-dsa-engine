@@ -395,5 +395,35 @@ int romanToInt(string s) {
     return ans;
 }
 
+int solveGold(vector<vector<int>>& grid, int x, int y, int r, int c) {
+    // Boundary check + no gold (0) check
+    if (x < 0 || x >= r || y < 0 || y >= c || grid[x][y] == 0) return 0;
+
+    int currentGold = grid[x][y];
+    grid[x][y] = 0; // mark visited (Backtracking)
+
+    // check all 4 directions and pick the max
+    int d = solveGold(grid, x + 1, y, r, c);
+    int u = solveGold(grid, x - 1, y, r, c);
+    int r_path = solveGold(grid, x, y + 1, r, c);
+    int l = solveGold(grid, x, y - 1, r, c);
+
+    grid[x][y] = currentGold; // restore for other paths
+    return currentGold + max({d, u, r_path, l});
+}
+int getMaximumGold(vector<vector<int>>& grid) {
+    int r = grid.size();
+    int c = grid[0].size();
+    int maxGold = 0;
+
+    for (int i = 0; i < r; i++) {
+        for (int j = 0; j < c; j++) {
+            if (grid[i][j] > 0) {
+                maxGold = max(maxGold, solveGold(grid, i, j, r, c));
+            }
+        }
+    }
+    return maxGold;
+}
 
 #endif
