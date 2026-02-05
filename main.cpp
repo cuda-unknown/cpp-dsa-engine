@@ -25,7 +25,8 @@ void showMenu() {
     cout << "18. Count Prime" <<endl;
     cout << "19. Longest Common Prefix"<<endl;
     cout << "20. Roman to Integers"<<endl;
-    cout << "21.Max Gold "<<endl;
+    cout << "21. Max Gold "<<endl;
+    cout << "22. N Queen Poblem"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -264,7 +265,8 @@ int main() {
     break;
     }
 
-    case 20: { // Roman to Integer
+    // Roman to Integer
+    case 20: { 
     string s;
     cout << "Enter Roman Numeral (e.g., LV): ";
     cin >> s;
@@ -283,8 +285,23 @@ int main() {
 
     cout << "Maximum Gold Collected: " << getMaximumGold(grid) << endl;
     break;
-}
+    }
 
+    case 22: {
+    int n;
+    cout << "Enter Board Size (e.g., 4): ";
+    cin >> n;
+    vector<vector<string>> solutions = solveNQueens(n); 
+    
+    cout << "Found " << solutions.size() << " solutions:" << endl;
+    for(auto board : solutions) {
+        for(string row : board) {
+            cout << row << endl;
+        }
+        cout << "-----------" << endl; 
+    }
+    break;
+    }
 
     default: {
         cout<<"Invalid choice!"<<endl;
