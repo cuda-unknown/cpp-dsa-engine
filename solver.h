@@ -121,6 +121,7 @@ long long power(int a, int b) {
     else return a * ans * ans;       
 }
 
+// Merge Sort
 void merge(int arr[], int s, int e) {
     int mid = s + (e - s) / 2; // More stable against overflow
 
@@ -165,7 +166,6 @@ void merge(int arr[], int s, int e) {
     delete[] second;
 }
 
-//Merge Sort 
 void mergeSort(int arr[], int s, int e) {
     if(s >= e) return;
 
@@ -176,7 +176,7 @@ void mergeSort(int arr[], int s, int e) {
     merge(arr, s, e);
 }
 
-
+// Quick Sort
 int partition(int arr[], int s, int e) {
     int pivot = arr[s];
 
@@ -208,7 +208,6 @@ int partition(int arr[], int s, int e) {
     return pivotIndex;
 }
 
-//Quick Sort
 void quickSort(int arr[], int s, int e) {
     // base case
     if (s >= e) return;
@@ -223,7 +222,7 @@ void quickSort(int arr[], int s, int e) {
     quickSort(arr, p + 1, e);
 }
 
- //subsets
+// Subsets
 void solveSubsets(vector<int> nums, vector<int> output, int index, vector<vector<int> >& ans) {
         //base case
     if(index >= nums.size()) {
@@ -382,6 +381,7 @@ string longestCommonPrefix(vector<string>& strs) {
     return ans;
 } 
 
+// Roman to Integer #13 
 int romanToInt(string s) {
     unordered_map<char, int> m = {
         {'I', 1}, {'V', 5}, {'X', 10}, {'L', 50}, 
@@ -462,11 +462,24 @@ int getMaximumGold(vector<vector<int>>& grid) {
         }
     }
 
-    vector<vector<string>> solveNQueens(int n) {
-        vector<vector<string>> ans;
-        vector<string> board(n, string(n, '.'));
-        solve(0, n, board, ans);
-        return ans;
+vector<vector<string>> solveNQueens(int n) {
+    vector<vector<string>> ans;
+    vector<string> board(n, string(n, '.'));
+    solve(0, n, board, ans);
+    return ans;
+}
+
+
+// Palindrome #125
+bool isPalindrome(string s) {
+    int st = 0, e = s.length() - 1;
+    while (st <= e) {
+        if (!isalnum(s[st])) st++;
+        else if (!isalnum(s[e])) e--;
+        else if (tolower(s[st]) != tolower(s[e])) return false;
+        else { st++; e--; }
     }
+    return true;
+}
 
 #endif

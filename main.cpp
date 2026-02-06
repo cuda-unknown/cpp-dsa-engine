@@ -27,6 +27,7 @@ void showMenu() {
     cout << "20. Roman to Integers"<<endl;
     cout << "21. Max Gold "<<endl;
     cout << "22. N Queen Poblem"<<endl;
+    cout << "23. Valid Palindrom"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -265,7 +266,7 @@ int main() {
     break;
     }
 
-    // Roman to Integer
+    // Roman to Integer #13
     case 20: { 
     string s;
     cout << "Enter Roman Numeral (e.g., LV): ";
@@ -300,6 +301,14 @@ int main() {
         }
         cout << "-----------" << endl; 
     }
+    break;
+    }
+
+    // Valid Palindrome #125
+    case 23: {
+    string s; cout << "Enter string: "; cin.ignore(); getline(cin, s);
+    if(isPalindrome(s)) cout << "It's a Valid Palindrome!" << endl;
+    else cout << "Not a Palindrome." << endl;
     break;
     }
 
