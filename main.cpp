@@ -28,6 +28,7 @@ void showMenu() {
     cout << "21. Max Gold "<<endl;
     cout << "22. N Queen Poblem"<<endl;
     cout << "23. Valid Palindrom"<<endl;
+    cout << "24. Move Zeroes"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -309,6 +310,20 @@ int main() {
     string s; cout << "Enter string: "; cin.ignore(); getline(cin, s);
     if(isPalindrome(s)) cout << "It's a Valid Palindrome!" << endl;
     else cout << "Not a Palindrome." << endl;
+    break;
+    }
+
+    // Move Zoroes #283
+    case 24: {
+    vector<int> nums = {0, 1, 0, 3, 12};
+    for(int i=0;i<nums.size();i++){
+        cout<<nums[i]<<" ";
+    }
+    moveZeroes(nums);
+    cout << "Moved Zeroes: ";
+    for(int i=0;i<nums.size();i++){
+        cout<<nums[i]<<" ";
+    } 
     break;
     }
 
