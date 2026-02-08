@@ -29,6 +29,7 @@ void showMenu() {
     cout << "22. N Queen Poblem"<<endl;
     cout << "23. Valid Palindrom"<<endl;
     cout << "24. Move Zeroes"<<endl;
+    cout << "25. Rotate Array"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -206,110 +207,114 @@ int main() {
     case 16:{
     
     int count;
-    cout << "How many numbers do you want to permute? (Keep it small, e.g., 3): ";
-    cin >> count;
+    cout<<"How many numbers do you want to permute?(Keep it small, e.g., 3): ";
+    cin>>count;
 
     vector<int> nums(count);
-    cout << "Enter the " << count << " numbers: ";
-    for(int i = 0; i < count; i++) cin >> nums[i];
+    cout<<"Enter the "<<count<<" numbers: ";
+    for(int i=0;i<count;i++) cin>>nums[i];
 
-    vector<vector<int>> result = permute(nums);
+    vector<vector<int>> result =permute(nums);
 
-    cout << "Total Permutations: " << result.size() << endl;
+    cout<<"Total Permutations: " <<result.size()<<endl;
     for (const auto& row : result) {
-        cout << "[ ";
-        for (int x : row) cout << x << " ";
-        cout << "] " << endl;
+        cout<<"[ ";
+        for (int x : row) cout<< x<<" ";
+        cout<<"] "<<endl;
     }
     break;
     }
 
     case 17: {
     int n;
-    cout << "Enter Maze size (N): "; 
-    cin >> n;
+    cout<<"Enter Maze size (N): "; 
+    cin>>n;
     vector<vector<int>> maze(n, vector<int>(n));
-    cout << "Enter Maze (0/1):" << endl;
+    cout<<"Enter Maze (0/1):"<<endl;
 
-    for(int i=0; i<n; i++) for(int j=0; j<n; j++) cin >> maze[i][j];
+    for(int i=0; i<n;i++) {
+        for(int j=0;j<n;j++) {
+            cin>>maze[i][j];
+        }
+    }
 
     vector<string> paths = findPath(maze, n);
 
-    if(paths.empty()) cout << "No paths exist!" << endl;
+    if(paths.empty()) cout<<"No paths exist!"<<endl;
     else {
-        for(string p : paths) cout << p << " ";
-        cout << endl;
+        for(string p : paths) cout<<p<<" ";
+        cout<<endl;
     }
     break;
     }
 
     case 18: {
     int n;
-    cout << "Enter a number to count primes up to: ";
-    cin >> n;
-    cout << "Number of primes: " << countPrimes(n) << endl;
+    cout<<"Enter a number to count primes up to: ";
+    cin>>n;
+    cout<<"Number of primes: "<<countPrimes(n)<<endl;
     break;
     }
 
     case 19: { 
     int n;
-    cout << "How many strings? ";
-    cin >> n;
+    cout<<"How many strings? ";
+    cin>>n;
     vector<string> strs(n);
     cout<<"----Please keep your string lowercase---"<<endl;
     cout<<endl;
-    cout << "Enter the strings:" << endl;
-    for(int i=0; i<n; i++) cin >> strs[i];
+    cout<<"Enter the strings:"<<endl;
+    for(int i=0;i<n;i++) cin>>strs[i];
     
     string prefix = longestCommonPrefix(strs);
-    if(prefix.empty()) cout << "No common prefix found." << endl;
-    else cout << "Longest Common Prefix: " << prefix << endl;
+    if(prefix.empty()) cout<<"No common prefix found."<<endl;
+    else cout<<"Longest Common Prefix: "<<prefix<<endl;
     break;
     }
 
     // Roman to Integer #13
     case 20: { 
     string s;
-    cout << "Enter Roman Numeral (e.g., LV): ";
-    cin >> s;
-    cout << "Integer Value: " << romanToInt(s) << endl;
+    cout<<"Enter Roman Numeral (e.g., LV): ";
+    cin>>s;
+    cout<<"Integer Value: "<<romanToInt(s)<<endl;
     break;
     }
 
     case 21: {
-    int r, c;
-    cout << "Enter Grid dimensions (Rows Cols): ";
-    cin >> r >> c;
+    int r,c;
+    cout<<"Enter Grid dimensions (Rows Cols): ";
+    cin>>r>>c;
     vector<vector<int>> grid(r, vector<int>(c));
-    cout << "Enter Gold values for each cell:" << endl;
-    for(int i=0; i<r; i++) 
-        for(int j=0; j<c; j++) cin >> grid[i][j];
+    cout<<"Enter Gold values for each cell:"<<endl;
+    for(int i=0;i<r;i++) 
+        for(int j=0;j<c;j++) cin>>grid[i][j];
 
-    cout << "Maximum Gold Collected: " << getMaximumGold(grid) << endl;
+    cout<<"Maximum Gold Collected: "<<getMaximumGold(grid) <<endl;
     break;
     }
 
     case 22: {
     int n;
-    cout << "Enter Board Size (e.g., 4): ";
-    cin >> n;
+    cout<<"Enter Board Size (e.g., 4): ";
+    cin>>n;
     vector<vector<string>> solutions = solveNQueens(n); 
     
-    cout << "Found " << solutions.size() << " solutions:" << endl;
+    cout<<"Found "<<solutions.size()<<" solutions:"<<endl;
     for(auto board : solutions) {
         for(string row : board) {
-            cout << row << endl;
+            cout<<row<<endl;
         }
-        cout << "-----------" << endl; 
+        cout<<"-----------"<<endl; 
     }
     break;
     }
 
     // Valid Palindrome #125
     case 23: {
-    string s; cout << "Enter string: "; cin.ignore(); getline(cin, s);
-    if(isPalindrome(s)) cout << "It's a Valid Palindrome!" << endl;
-    else cout << "Not a Palindrome." << endl;
+    string s; cout<<"Enter string: "; cin.ignore(); getline(cin, s);
+    if(isPalindrome(s)) cout<<"It's a Valid Palindrome!"<<endl;
+    else cout<<"Not a Palindrome."<<endl;
     break;
     }
 
@@ -324,6 +329,26 @@ int main() {
     for(int i=0;i<nums.size();i++){
         cout<<nums[i]<<" ";
     } 
+    break;
+    }
+    
+    // Rotate Array #189
+    case 25: {
+    int n, k;
+    cout<<"Enter array size: ";
+    cin>>n;
+    vector<int> nums(n);
+    cout<<"Enter elements:";
+    for(int i=0;i<n;i++) cin>>nums[i];
+    
+    cout<<"Enter rotation steps (k):";
+    cin>>k;
+
+    rotate(nums, k);
+
+    cout<<"Rotated Array: ";
+    for(int x:nums) cout<<x<<" ";
+    cout<<endl;
     break;
     }
 
