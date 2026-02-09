@@ -30,6 +30,7 @@ void showMenu() {
     cout << "23. Valid Palindrom"<<endl;
     cout << "24. Move Zeroes"<<endl;
     cout << "25. Rotate Array"<<endl;
+    cout << "26. Square Root"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -350,6 +351,22 @@ int main() {
     for(int x:nums) cout<<x<<" ";
     cout<<endl;
     break;
+    }
+
+    //#69 sqrt
+    case 26: {
+    int n;
+    cout << "Enter a number to find its square root (floor): ";
+    
+    if (!(cin >> n)) {
+        cout << "Invalid input." << endl;
+        return 1;
+    }
+
+    if (n < 0) cout << "Square root of negative numbers involves 'i' (imaginary numbers)!" << endl;
+    else  cout << "The square root of " << n << " is approximately: " << mySqrt(n) << endl;
+    
+    break;    
     }
 
     default: {

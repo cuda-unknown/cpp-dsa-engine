@@ -293,7 +293,6 @@ vector<vector<int>> permute(vector<int>& nums) {
 }
 
 // Rat in Maze
-
 bool issafe(int x,int y,int n,vector<vector<int>> &visited,vector<vector<int>>& m){
     if( (x>=0 && x<n) && (y>=0 && y<n) && visited[x][y]==0 && m[x][y]==1){
         return true;
@@ -500,6 +499,21 @@ void rotate(vector<int>& nums, int k) {
     reverse(nums.begin(), nums.end());
     reverse(nums.begin(), nums.begin() + k);
     reverse(nums.begin() + k, nums.end());
+}
+
+//#69 sqrt
+int mySqrt(int x) {
+    if (x == 0) return 0;
+    int s = 1, e = x, ans = 0;
+    while (s <= e) {
+        int mid = s + (e - s) / 2;
+        if (mid <= x / mid) {
+            ans = mid;
+            s = mid + 1;
+        } 
+        else e = mid - 1;
+    }
+    return ans;
 }
 
 #endif
