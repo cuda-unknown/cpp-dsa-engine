@@ -31,6 +31,7 @@ void showMenu() {
     cout << "24. Move Zeroes"<<endl;
     cout << "25. Rotate Array"<<endl;
     cout << "26. Square Root"<<endl;
+    cout << "27. Merge Sorted Array"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -367,6 +368,34 @@ int main() {
     else  cout << "The square root of " << n << " is approximately: " << mySqrt(n) << endl;
     
     break;    
+    }
+
+    //#88 
+    case 27: { 
+    int m,n;
+    cout<<"Enter size of nums1 (valid elements): ";
+    cin>>m;
+    cout<<"Enter size of nums2: "; 
+    cin>>n;
+    
+    vector<int> nums1(m+n);
+    vector<int> nums2(n);
+    
+    cout<<"Enter "<<m<<" elements for nums1: ";
+    for(int i=0;i<m;i++) 
+    cin>>nums1[i];
+    
+    cout<<"Enter "<<n<<" elements for nums2: ";
+    for(int i=0;i<n;i++) 
+    cin>>nums2[i];
+
+    merge(nums1,m,nums2,n);
+
+    cout<<"Merged Array: ";
+    for(int x : nums1) 
+    cout<< x << " ";
+    cout<<endl;
+    break;
     }
 
     default: {
