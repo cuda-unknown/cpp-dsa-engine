@@ -528,4 +528,17 @@ void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
     }
 }
 
+// #217 Contains Duplicate
+bool containsDuplicate(vector<int>& nums) {
+    if (nums.empty()) return false;
+    
+    sort(nums.begin(), nums.end());
+    
+    for (int i = 0; i < nums.size() - 1; i++) {
+        if (nums[i] == nums[i + 1]) return true;
+    }
+    return false;
+}
+
+
 #endif

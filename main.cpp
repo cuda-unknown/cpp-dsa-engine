@@ -32,6 +32,7 @@ void showMenu() {
     cout << "25. Rotate Array"<<endl;
     cout << "26. Square Root"<<endl;
     cout << "27. Merge Sorted Array"<<endl;
+    cout << "28. Contains Duplicate"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -395,6 +396,17 @@ int main() {
     for(int x : nums1) 
     cout<< x << " ";
     cout<<endl;
+    break;
+    }
+
+    case 28: {
+        vector<int> nums = {1, 2, 3, 1};
+
+    cout<<"Duplicate Check "<<endl;
+    cout<<endl;
+    cout<<"The result is:"<<" ";
+    if (containsDuplicate(nums))   cout<<"Duplicate found"<<endl;
+    else   cout <<"All elements are unique"<<endl;
     break;
     }
 
