@@ -5,15 +5,15 @@ using namespace std;
 
 void showMenu() {
     cout << "\n--- CPP DSA ENGINE ---" <<endl;
-    cout << "1. Anagram" <<endl;
-    cout << "2. Construct" <<endl;
-    cout << "3. Binary Search" <<endl;
-    cout << "4. Recursive Bubble Sort" <<endl;
-    cout << "5. Lineaar Search" <<endl;
-    cout << "6. Get Sum" <<endl;
-    cout << "7. Check If Sorted" <<endl;
-    cout << "8. Reverse String " <<endl;
-    cout << "9. Fast String Reversal (STL)" <<endl;
+    cout << "1.  Anagram" <<endl;
+    cout << "2.  Construct" <<endl;
+    cout << "3.  Binary Search" <<endl;
+    cout << "4.  Recursive Bubble Sort" <<endl;
+    cout << "5.  Lineaar Search" <<endl;
+    cout << "6.  Get Sum" <<endl;
+    cout << "7.  Check If Sorted" <<endl;
+    cout << "8.  Reverse String " <<endl;
+    cout << "9.  Fast String Reversal (STL)" <<endl;
     cout << "10. Palindrome " <<endl;
     cout << "11. Power of X Check" <<endl;
     cout << "12. Merge Sort" <<endl;
@@ -33,6 +33,7 @@ void showMenu() {
     cout << "26. Square Root"<<endl;
     cout << "27. Merge Sorted Array"<<endl;
     cout << "28. Contains Duplicate"<<endl;
+    cout << "29. Compress"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -398,15 +399,34 @@ int main() {
     cout<<endl;
     break;
     }
-
+    
+    //#217
     case 28: {
-        vector<int> nums = {1, 2, 3, 1};
+    vector<int> nums = {1, 2, 3, 1};
 
     cout<<"Duplicate Check "<<endl;
     cout<<endl;
     cout<<"The result is:"<<" ";
+    
     if (containsDuplicate(nums))   cout<<"Duplicate found"<<endl;
     else   cout <<"All elements are unique"<<endl;
+    break;
+    }
+
+    //
+    case 29: {
+    string s; 
+    cout << "Enter string to compress: "; 
+    cin >> s;
+
+    vector<char> chars(s.begin(), s.end());
+    int newSize = compress(chars);
+
+    cout << "Compressed: ";
+    for(int i=0; i<newSize; i++){
+     cout << chars[i];
+    }
+    cout << "\nNew Size: " << newSize << endl;
     break;
     }
 

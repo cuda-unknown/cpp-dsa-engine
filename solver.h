@@ -98,19 +98,20 @@ void reverseString(string& s, int i, int j) {
     swap(s[i], s[j]);
     reverseString(s, i + 1, j - 1);
 }
- //Fast for Reversing String 
+
+ // Fast for Reversing String 
  void reverseStringFast(string&sa){
     reverse(sa.begin(),sa.end());
  }
 
-//  Recursive Palindrome Check
+// Recursive Palindrome Check
 bool isPalindrome(string s, int i, int j) {
     if(i > j) return true;
     if(s[i] != s[j]) return false;
     return isPalindrome(s, i + 1, j - 1);
 }
 
-//Power Function (a^b)
+// Power Function (a^b)
 long long power(int a, int b) {
     if(b == 0) return 1;
     if(b == 1) return a;
@@ -123,7 +124,7 @@ long long power(int a, int b) {
 
 // Merge Sort
 void merge(int arr[], int s, int e) {
-    int mid = s + (e - s) / 2; // More stable against overflow
+    int mid = s + (e - s) / 2;
 
     int len1 = mid - s + 1;
     int len2 = e - mid;
@@ -141,7 +142,7 @@ void merge(int arr[], int s, int e) {
         second[i] = arr[mainArrayIndex++];
     }
 
-    // Merge 2 sorted arrays
+    //Merge 2 sorted arrays
     int index1 = 0;
     int index2 = 0;
     mainArrayIndex = s;
@@ -380,7 +381,7 @@ string longestCommonPrefix(vector<string>& strs) {
     return ans;
 } 
 
-// Roman to Integer #13 
+// #13 Roman to Integer #13 
 int romanToInt(string s) {
     unordered_map<char, int> m = {
         {'I', 1}, {'V', 5}, {'X', 10}, {'L', 50}, 
@@ -394,7 +395,7 @@ int romanToInt(string s) {
     return ans;
 }
 
-//#1219
+// #1219
 int solveGold(vector<vector<int>>& grid, int x, int y, int r, int c) {
     // Boundary check + no gold (0) check
     if (x < 0 || x >= r || y < 0 || y >= c || grid[x][y] == 0) return 0;
@@ -426,7 +427,7 @@ int getMaximumGold(vector<vector<int>>& grid) {
     return maxGold;
 }
 
-//#51 N Queen Problem
+// #51 N Queen Problem
  bool isSafe(int row, int col, vector<string>& board, int n) {
         // 1. Check same column (above)
         for (int i = 0; i < row; i++) {
@@ -501,7 +502,7 @@ void rotate(vector<int>& nums, int k) {
     reverse(nums.begin() + k, nums.end());
 }
 
-//#69 sqrt
+// #69 sqrt
 int mySqrt(int x) {
     if (x == 0) return 0;
     int s = 1, e = x, ans = 0;
@@ -516,7 +517,7 @@ int mySqrt(int x) {
     return ans;
 }
 
-//#88
+// #88
 void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
     int i=m-1,j=n-1,k=m+n-1;
     while (i>=0 && j>=0) {
@@ -534,11 +535,27 @@ bool containsDuplicate(vector<int>& nums) {
     
     sort(nums.begin(), nums.end());
     
-    for (int i = 0; i < nums.size() - 1; i++) {
-        if (nums[i] == nums[i + 1]) return true;
+    for (int i=0;i<nums.size()-1;i++) {
+        if (nums[i]==nums[i+1]) return true;
     }
     return false;
 }
 
+// #443
+int compress(vector<char>& chars) {
+    int i = 0, ansIndex = 0, n = chars.size();
+    while (i < n) {
+        int j = i + 1;
+        while (j < n && chars[i] == chars[j]) j++;
+        chars[ansIndex++] = chars[i];
+        int count = j - i;
+        if (count > 1) {
+            string cnt = to_string(count);
+            for (char ch : cnt) chars[ansIndex++] = ch;
+        }
+        i = j;
+    }
+    return ansIndex;
+}
 
 #endif
