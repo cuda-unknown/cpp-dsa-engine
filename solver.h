@@ -558,4 +558,24 @@ int compress(vector<char>& chars) {
     return ansIndex;
 }
 
+// #121 Best time to buy sell stocks
+int maxProfit(vector<int>& prices){
+    int min_price =1e9; 
+    int max_profit =0;
+        
+    for (int i=0;i<prices.size();i++){
+        if (prices[i] <min_price){
+            min_price= prices[i];
+        } 
+        
+        else{
+            int current_profit= prices[i]-min_price;
+            if (current_profit> max_profit){
+                max_profit= current_profit;
+            }
+        }
+    }   
+    return max_profit; 
+}
+
 #endif

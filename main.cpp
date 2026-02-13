@@ -34,6 +34,7 @@ void showMenu() {
     cout << "27. Merge Sorted Array"<<endl;
     cout << "28. Contains Duplicate"<<endl;
     cout << "29. Compress"<<endl;
+    cout << "30. Best time to buy ans sell stocks"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -413,7 +414,7 @@ int main() {
     break;
     }
 
-    //
+    // #443 string compress
     case 29: {
     string s; 
     cout << "Enter string to compress: "; 
@@ -427,6 +428,17 @@ int main() {
      cout << chars[i];
     }
     cout << "\nNew Size: " << newSize << endl;
+    break;
+    }
+    
+    case 30: {
+
+    vector<int> prices = {7, 1, 5, 3, 6, 4};
+    
+    int result = maxProfit(prices);
+    
+    cout << "Input Prices: [7, 1, 5, 3, 6, 4]" << endl;
+    cout << "Maximum Profit: " << result << " (Buy at 1, Sell at 6)" << endl;
     break;
     }
 
