@@ -558,7 +558,7 @@ int compress(vector<char>& chars) {
     return ansIndex;
 }
 
-// #121 Best time to buy sell stocks
+// #121 Best time to Buy Sell Stocks
 int maxProfit(vector<int>& prices){
     int min_price =1e9; 
     int max_profit =0;
@@ -577,5 +577,16 @@ int maxProfit(vector<int>& prices){
     }   
     return max_profit; 
 }
+
+// #1920 Build Array from Permutation
+vector<int> buildArray(vector<int>& nums) {
+    int n = nums.size();
+    vector<int> ans(n);
+    for (int i=0;i<n;i++) {
+        ans[i] =nums[nums[i]]; 
+    }
+    return ans;
+}
+
 
 #endif

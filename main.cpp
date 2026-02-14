@@ -35,6 +35,7 @@ void showMenu() {
     cout << "28. Contains Duplicate"<<endl;
     cout << "29. Compress"<<endl;
     cout << "30. Best time to buy ans sell stocks"<<endl;
+    cout << "31. Build Array from Permutation"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -431,6 +432,7 @@ int main() {
     break;
     }
     
+    //#121 
     case 30: {
 
     vector<int> prices = {7, 1, 5, 3, 6, 4};
@@ -439,6 +441,26 @@ int main() {
     
     cout << "Input Prices: [7, 1, 5, 3, 6, 4]" << endl;
     cout << "Maximum Profit: " << result << " (Buy at 1, Sell at 6)" << endl;
+    break;
+    }
+    
+    // #1920 Build Array from Permutation
+    case 31: {
+    vector<int> nums = {0, 2, 1, 5, 3, 4};
+    
+    cout<<" Array Permutation "<<endl;
+    cout<<endl;
+    cout<<"Input Array:  ";
+    for(int x : nums) 
+    cout<<x<<" ";
+    cout<<endl;
+
+    vector<int> result = buildArray(nums);
+
+    cout<<"Output Array: ";
+    for(int x : result) 
+    cout<<x<<" ";
+    cout<<endl;
     break;
     }
 
