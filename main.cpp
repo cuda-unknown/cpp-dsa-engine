@@ -36,6 +36,7 @@ void showMenu() {
     cout << "29. Compress"<<endl;
     cout << "30. Best time to buy ans sell stocks"<<endl;
     cout << "31. Build Array from Permutation"<<endl;
+    cout << "32. Running Sum of 1D Array"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -460,6 +461,23 @@ int main() {
     cout<<"Output Array: ";
     for(int x : result) 
     cout<<x<<" ";
+    cout<<endl;
+    break;
+    }
+    
+    case 32: {
+    vector<int> nums ={1,1,1,1,1};
+    
+    cout<<" Running Sum Solver "<<endl;
+    cout<<"Original Array"<<endl;
+     for(int i=0;i<nums.size();i++){
+        cout<<nums[i]<<" ";
+    }
+    cout<<endl;
+    vector<int> result =runningSum(nums);
+    
+    cout<<"Result: ";
+    for (int x : result) cout<<x<<" ";
     cout<<endl;
     break;
     }

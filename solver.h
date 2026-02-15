@@ -588,5 +588,13 @@ vector<int> buildArray(vector<int>& nums) {
     return ans;
 }
 
+// #1480 Running sum of 1 d array
+vector<int> runningSum(vector<int>& nums) {
+        // Start from 1, so i-1 is always at least 0
+        for(int i = 1; i < nums.size(); i++){
+            nums[i] += nums[i-1];
+        }
+        return nums;
+    }
 
 #endif
