@@ -37,6 +37,7 @@ void showMenu() {
     cout << "30. Best time to buy ans sell stocks"<<endl;
     cout << "31. Build Array from Permutation"<<endl;
     cout << "32. Running Sum of 1D Array"<<endl;
+    cout << "33. Two Sum II-Input Array is Sorted"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -465,12 +466,13 @@ int main() {
     break;
     }
     
+    //#1480
     case 32: {
     vector<int> nums ={1,1,1,1,1};
     
     cout<<" Running Sum Solver "<<endl;
     cout<<"Original Array"<<endl;
-     for(int i=0;i<nums.size();i++){
+    for(int i=0;i<nums.size();i++){
         cout<<nums[i]<<" ";
     }
     cout<<endl;
@@ -480,6 +482,24 @@ int main() {
     for (int x : result) cout<<x<<" ";
     cout<<endl;
     break;
+    }
+
+    //#167 
+    case 33: {
+        vector<int> numbers = {2,7,11,15};
+        int target=9;
+        cout<<" Two Sum II "<<endl;
+        cout<<" Original Array "<<endl;
+        for(int i=0;i<numbers.size();i++){
+        cout<<numbers[i]<<" ";
+        }
+        cout<<endl;
+        cout<<"Target is:"<<target<<endl;
+        vector<int> result= twoSum(numbers,target);
+        cout<<" Result:";
+        for(int x:result) cout<<x<<" ";
+        cout<<endl;
+        break;
     }
 
     default: {
