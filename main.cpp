@@ -38,6 +38,7 @@ void showMenu() {
     cout << "31. Build Array from Permutation"<<endl;
     cout << "32. Running Sum of 1D Array"<<endl;
     cout << "33. Two Sum II-Input Array is Sorted"<<endl;
+    cout << "34. How Many Numbers Are Smaller Than the Current Number."<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -446,7 +447,7 @@ int main() {
     break;
     }
     
-    // #1920 Build Array from Permutation
+    //#1920 Build Array from Permutation
     case 31: {
     vector<int> nums = {0, 2, 1, 5, 3, 4};
     
@@ -500,6 +501,23 @@ int main() {
         for(int x:result) cout<<x<<" ";
         cout<<endl;
         break;
+    }
+
+    //#1365 
+    case 34: {
+    vector<int> nums = {8, 1, 2, 2, 3};
+    cout<<" Original Array:"<<endl;
+    for(int i=0;i<nums.size();i++){
+        cout<<nums[i]<<" ";
+    }
+    cout<<endl;
+    vector<int> result = smallerNumbersThanCurrent(nums);
+
+    cout << "Counts of smaller numbers: ";
+    cout<<endl;
+    for(int x : result) cout << x << " ";
+    cout << endl;
+    break;
     }
 
     default: {
