@@ -39,6 +39,7 @@ void showMenu() {
     cout << "32. Running Sum of 1D Array"<<endl;
     cout << "33. Two Sum II-Input Array is Sorted"<<endl;
     cout << "34. How Many Numbers Are Smaller Than the Current Number."<<endl;
+    cout << "35. Shuffle the Array"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -517,6 +518,23 @@ int main() {
     cout<<endl;
     for(int x : result) cout << x << " ";
     cout << endl;
+    break;
+    }
+
+    //#1470 Shuffle the Array
+    case 35: {
+    vector<int> nums = {2, 5, 1, 3, 4, 7};
+    int n = 3;
+    cout<<" Original Array "<<endl;
+    for(int i=0;i<nums.size();i++){
+        cout<<nums[i]<<" ";
+    }
+    cout<<endl;
+    cout<<" Result "<<endl;
+    
+    vector<int> result = shuffle(nums, n);
+    
+    for(int x : result) cout << x << " ";
     break;
     }
 

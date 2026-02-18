@@ -625,5 +625,15 @@ vector<int> twoSum(vector<int>& numbers, int target) {
     return result;
 }
 
+//#1470 Shuffle the Array
+vector<int> shuffle(vector<int>& nums, int n) {
+    vector<int> result(2 * n);
+    for (int i = 0; i < n; i++) {
+        result[2 * i] = nums[i];         // Place xi
+        result[2 * i + 1] = nums[i + n]; // Place yi
+    }
+    return result;
+}
+
 
 #endif
