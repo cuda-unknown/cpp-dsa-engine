@@ -40,6 +40,7 @@ void showMenu() {
     cout << "33. Two Sum II-Input Array is Sorted"<<endl;
     cout << "34. How Many Numbers Are Smaller Than the Current Number."<<endl;
     cout << "35. Shuffle the Array"<<endl;
+    cout << "36. Jewels and Stones "<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -535,6 +536,15 @@ int main() {
     vector<int> result = shuffle(nums, n);
     
     for(int x : result) cout << x << " ";
+    break;
+    }
+
+    //#771
+    case 36: {
+    string jewels = "aA", stones = "aAAbbbb";
+    
+    cout << "--- Jewel Counter ---" << endl;
+    cout << "Total Jewels found: " << numJewelsInStones(jewels, stones) << endl;
     break;
     }
 
