@@ -41,6 +41,7 @@ void showMenu() {
     cout << "34. How Many Numbers Are Smaller Than the Current Number."<<endl;
     cout << "35. Shuffle the Array"<<endl;
     cout << "36. Jewels and Stones "<<endl;
+    cout << "37. Find Value of Variables After Perfroming Operations "<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -545,6 +546,21 @@ int main() {
     
     cout << "--- Jewel Counter ---" << endl;
     cout << "Total Jewels found: " << numJewelsInStones(jewels, stones) << endl;
+    break;
+    }
+
+    //#2011
+    case 37: {
+    vector<string> ops = {"--X", "X++", "X++"};
+
+    cout << "--- Variable Operation Solver ---" << endl;
+    
+    int result = finalValueAfterOperations(ops);
+
+    cout << "Input Operations: ";
+    for (const string& s : ops) cout << s << " ";
+    
+    cout << "\nFinal Value of X: " << result << endl;
     break;
     }
 

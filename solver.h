@@ -646,4 +646,14 @@ int numJewelsInStones(string jewels, string stones) {
     return count;
 }
 
+//#2011
+int finalValueAfterOperations(vector<string>& operations) {
+    int x=0;
+    for(string s : operations){
+        if(s[1] == '+') x++;
+        else x--;
+    }
+    return x;
+}
+
 #endif
