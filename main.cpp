@@ -42,6 +42,7 @@ void showMenu() {
     cout << "35. Shuffle the Array"<<endl;
     cout << "36. Jewels and Stones "<<endl;
     cout << "37. Find Value of Variables After Perfroming Operations "<<endl;
+    cout << "38. Maximum Number of Words Found in Sentence"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -561,6 +562,23 @@ int main() {
     for (const string& s : ops) cout << s << " ";
     
     cout << "\nFinal Value of X: " << result << endl;
+    break;
+    }
+
+    //#2114
+    case 38: {
+    vector<string> sentences = {
+        "alice and bob love leetcode", 
+        "i think so too", 
+        "this is great thanks very much"
+    };
+
+    cout << "--- Word Counter Engine ---" << endl;
+    int result = mostWordsFound(sentences);
+
+    cout << "Sentences analyzed: " << sentences.size() << endl;
+    cout << "Max words in a single sentence: " << result << endl;
+
     break;
     }
 
