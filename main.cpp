@@ -43,6 +43,7 @@ void showMenu() {
     cout << "36. Jewels and Stones "<<endl;
     cout << "37. Find Value of Variables After Perfroming Operations "<<endl;
     cout << "38. Maximum Number of Words Found in Sentence"<<endl;
+    cout << "39. Count Pairs Whose Sum is Less Than Target"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -580,6 +581,24 @@ int main() {
     cout << "Max words in a single sentence: " << result << endl;
 
     break;
+    }
+
+    //#2824
+    case 39: {
+        vector<int> nums = {-1,1,2,3,1};
+        int target = 2;
+        cout<<"---Pair Counter---"<<endl;
+        cout<<" Original Array "<<endl;
+        for(int i=0;i<nums.size();i++){
+        cout<<nums[i]<<" ";
+        }
+        cout<<endl;
+
+        cout<<"Result :"<<" ";
+        
+        int Result=countPairs(nums,target);
+        cout<<Result;
+        break;
     }
 
     default: {
