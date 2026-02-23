@@ -44,6 +44,7 @@ void showMenu() {
     cout << "37. Find Value of Variables After Perfroming Operations "<<endl;
     cout << "38. Maximum Number of Words Found in Sentence"<<endl;
     cout << "39. Count Pairs Whose Sum is Less Than Target"<<endl;
+    cout << "40. Number of Employees Who Met the Target"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -601,6 +602,20 @@ int main() {
         break;
     }
 
+    //#2798
+    case 40: {
+        vector<int> hours = {0,1,2,3,4};
+        int target = 2;
+         cout<<" Number of Hours Employees Worked "<<endl;
+        for(int i=0;i<hours.size();i++){
+        cout<<hours[i]<<" ";
+        }
+        cout<<endl;
+        cout<<"Employees Who Did Desired Hours Of Work: "<<" ";
+        int Result=numberOfEmployeesWhoMetTarget(hours,target);
+        cout<<Result;
+        break;
+    }
     default: {
         cout<<"Invalid choice!"<<endl;
         break;

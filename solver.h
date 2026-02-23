@@ -680,5 +680,15 @@ int countPairs(vector<int>& nums, int target) {
     return pairs;
 }
 
+//#2798
+int numberOfEmployeesWhoMetTarget(vector<int>& hours, int target) {
+    int count=0;
+    for(int i:hours){
+        if(i>=target) count++;
+    }
+    return count;
+}
+
+
 
 #endif
