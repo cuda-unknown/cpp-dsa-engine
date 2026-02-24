@@ -45,6 +45,7 @@ void showMenu() {
     cout << "38. Maximum Number of Words Found in Sentence"<<endl;
     cout << "39. Count Pairs Whose Sum is Less Than Target"<<endl;
     cout << "40. Number of Employees Who Met the Target"<<endl;
+    cout << "41. Remove Element"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -616,6 +617,24 @@ int main() {
         cout<<Result;
         break;
     }
+
+    //#27
+    case 41: {
+    
+    vector<int> nums = {3, 2, 2, 3};
+    int val=3;
+
+    cout<<"--- Element Remover---"<<endl;
+    int k=removeElement(nums,val);
+
+    cout<<"New Length: "<<k<<endl;
+    cout << "Modified Array: ";
+    for (int i=0;i<k;i++) 
+    cout<<nums[i]<<" ";
+    cout<<endl;
+    break;
+    }
+
     default: {
         cout<<"Invalid choice!"<<endl;
         break;
