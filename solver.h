@@ -702,7 +702,17 @@ int removeElement(vector<int>& nums, int val) {
     return l;
 }
 
-
+//#1732: Find the Highest Altitude
+int largestAltitude(vector<int>& gain) {
+    int ans=0;
+    int prev=0;
+    for (int i=1;i<=gain.size();i++) {
+        int current=prev+gain[i-1];
+        ans=max(ans,current);
+        prev=current;
+    }
+    return ans;
+}
 
 
 #endif

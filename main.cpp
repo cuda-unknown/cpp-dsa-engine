@@ -46,6 +46,7 @@ void showMenu() {
     cout << "39. Count Pairs Whose Sum is Less Than Target"<<endl;
     cout << "40. Number of Employees Who Met the Target"<<endl;
     cout << "41. Remove Element"<<endl;
+    cout << "42. Find the Highest Altitude"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -618,9 +619,8 @@ int main() {
         break;
     }
 
-    //#27
+    //#27 Remove Element
     case 41: {
-    
     vector<int> nums = {3, 2, 2, 3};
     int val=3;
 
@@ -629,9 +629,20 @@ int main() {
 
     cout<<"New Length: "<<k<<endl;
     cout << "Modified Array: ";
-    for (int i=0;i<k;i++) 
-    cout<<nums[i]<<" ";
+    for (int i=0;i<k;i++){
+        cout<<nums[i]<<" ";
+    }
     cout<<endl;
+    break;
+    }
+
+    //#1732 Find the Highest Altitude
+    case 42: {
+    vector<int> gain = {-5, 1, 5, 0, -7};
+    cout<<"---Altitude Tracker---"<<endl;
+    int result=largestAltitude(gain);
+    
+    cout<<"Highest Point Reached:"<<result<<endl;
     break;
     }
 
