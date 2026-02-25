@@ -47,6 +47,7 @@ void showMenu() {
     cout << "40. Number of Employees Who Met the Target"<<endl;
     cout << "41. Remove Element"<<endl;
     cout << "42. Find the Highest Altitude"<<endl;
+    cout << "43. Find Words Containing Character"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -643,6 +644,23 @@ int main() {
     int result=largestAltitude(gain);
     
     cout<<"Highest Point Reached:"<<result<<endl;
+    break;
+    }
+
+    //#2942 Find Words Containing Character
+    case 43: {
+    vector<string> words={"leet","code","crop","computer"};
+    char target='e';
+    cout<<"---Word Finder Engine---"<<endl;
+
+    vector<int> result =findWordsContaining(words,target);
+
+    cout<<"Searching for character: '"<<target<<"'"<<endl;
+    cout<<"Found at indices: ";
+    for (int idx : result) {
+        cout<<idx<<" ";
+    }
+    cout<<endl;
     break;
     }
 
