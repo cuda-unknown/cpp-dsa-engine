@@ -396,7 +396,7 @@ int romanToInt(string s) {
     return ans;
 }
 
-// #1219
+//#1219
 int solveGold(vector<vector<int>>& grid, int x, int y, int r, int c) {
     // Boundary check + no gold (0) check
     if (x < 0 || x >= r || y < 0 || y >= c || grid[x][y] == 0) return 0;
@@ -471,7 +471,7 @@ vector<vector<string>> solveNQueens(int n) {
 }
 
 
-// Palindrome #125
+//#125 Palindrome 
 bool isPalindrome(string s) {
     int st = 0, e = s.length() - 1;
     while (st <= e) {
@@ -483,7 +483,7 @@ bool isPalindrome(string s) {
     return true;
 }
 
-// Move zeroes #283
+//#283 Move zeroes 
 void moveZeroes(vector<int>& nums) {
     int i=0;
     for(int j=0;j<nums.size();j++){
@@ -494,7 +494,7 @@ void moveZeroes(vector<int>& nums) {
     }
 }
 
-// Rotate Array #189
+//#189 Rotate Array 
 void rotate(vector<int>& nums, int k) {
     int n = nums.size();
     k = k % n;
@@ -518,7 +518,7 @@ int mySqrt(int x) {
     return ans;
 }
 
-// #88
+//#88
 void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
     int i=m-1,j=n-1,k=m+n-1;
     while (i>=0 && j>=0) {
@@ -530,7 +530,7 @@ void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
     }
 }
 
-// #217 Contains Duplicate
+//#217 Contains Duplicate
 bool containsDuplicate(vector<int>& nums) {
     if (nums.empty()) return false;
     
@@ -542,7 +542,7 @@ bool containsDuplicate(vector<int>& nums) {
     return false;
 }
 
-// #443
+//#443
 int compress(vector<char>& chars) {
     int i = 0, ansIndex = 0, n = chars.size();
     while (i < n) {
@@ -559,7 +559,7 @@ int compress(vector<char>& chars) {
     return ansIndex;
 }
 
-// #121 Best time to Buy Sell Stocks
+//#121 Best time to Buy Sell Stocks
 int maxProfit(vector<int>& prices){
     int min_price =1e9; 
     int max_profit =0;
@@ -579,7 +579,7 @@ int maxProfit(vector<int>& prices){
     return max_profit; 
 }
 
-// #1920 Build Array from Permutation
+//#1920 Build Array from Permutation
 vector<int> buildArray(vector<int>& nums) {
     int n = nums.size();
     vector<int> ans(n);
@@ -589,7 +589,7 @@ vector<int> buildArray(vector<int>& nums) {
     return ans;
 }
 
-// #1480 Running sum of 1 d array
+//#1480 Running sum of 1 d array
 vector<int> runningSum(vector<int>& nums) {
         // Start from 1, so i-1 is always at least 0
         for(int i = 1; i < nums.size(); i++){
@@ -598,7 +598,7 @@ vector<int> runningSum(vector<int>& nums) {
         return nums;
     }
 
-// Two Sum II #167 
+//#167 Two Sum II 
 vector<int> twoSum(vector<int>& numbers, int target) {
     int l=0;
     int r=numbers.size()-1;
@@ -611,7 +611,7 @@ vector<int> twoSum(vector<int>& numbers, int target) {
     return{};
 }
 
-// #1365 How Many Numbers Are Smaller Than the Current Number.
+//#1365 How Many Numbers Are Smaller Than the Current Number.
  vector<int> smallerNumbersThanCurrent(vector<int>& nums) {
     vector<int> result;
     for(int i = 0; i < nums.size(); i++) {
@@ -715,17 +715,27 @@ int largestAltitude(vector<int>& gain) {
 }
 
 //#2942 Find Words Containing Character
-    vector<int> findWordsContaining(vector<string>& words, char x) {
-        vector <int> res;
-        for (int i = 0 ; i < words.size() ; i++) 
-            for (int j = 0 ; j < words[i].size() ; j++) 
-                if (words[i][j] == x) {
-                    res.push_back(i);
-                    break;
-                }
-        return res;
-    }
+vector<int> findWordsContaining(vector<string>& words, char x) {
+    vector <int> res;
+    for (int i = 0 ; i < words.size() ; i++) 
+        for (int j = 0 ; j < words[i].size() ; j++) 
+            if (words[i][j] == x) {
+                res.push_back(i);
+                break;
+            }
+    return res;
+}
 
-//
+//#70 Climbing Stairs
+int climbStairs(int n) {
+    if(n==0||n==1)  return 1;
+    int prev=1,curr=1;
+    for(int i=2;i<=n;i++){
+        int temp=curr;
+        curr=prev+curr;
+        prev=temp;
+    }
+    return curr;
+}
 
 #endif

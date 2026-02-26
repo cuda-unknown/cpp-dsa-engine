@@ -48,6 +48,7 @@ void showMenu() {
     cout << "41. Remove Element"<<endl;
     cout << "42. Find the Highest Altitude"<<endl;
     cout << "43. Find Words Containing Character"<<endl;
+    cout << "44. Climbing Stairs"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -661,6 +662,16 @@ int main() {
         cout<<idx<<" ";
     }
     cout<<endl;
+    break;
+    }
+
+    //#70  Climbing Stairs
+    case 44: {
+    int steps=5;
+    cout<<"--- Staircase Solver---"<<endl;
+    for (int i=1;i<=steps;i++){
+        cout<<"Steps: "<<i<<" | Distinct Ways: "<<climbStairs(i)<<endl;
+    }
     break;
     }
 
