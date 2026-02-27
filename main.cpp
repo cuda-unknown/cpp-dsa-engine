@@ -49,6 +49,7 @@ void showMenu() {
     cout << "42. Find the Highest Altitude"<<endl;
     cout << "43. Find Words Containing Character"<<endl;
     cout << "44. Climbing Stairs"<<endl;
+    cout << "45. Length of Last Word"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -673,6 +674,18 @@ int main() {
         cout<<"Steps: "<<i<<" | Distinct Ways: "<<climbStairs(i)<<endl;
     }
     break;
+    }
+
+    //#58 Length of Last Word
+    case 45: {
+        string s = "   fly me   to   the moon  ";
+        cout << "--- Last Word Length Engine (#58) ---" << endl;
+    
+        int result = lengthOfLastWord(s);
+        
+        cout << "Input String: \"" << s << "\"" << endl;
+        cout << "Length of last word ('moon'): " << result << endl;
+        break;
     }
 
     default: {

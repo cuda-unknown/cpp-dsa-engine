@@ -738,4 +738,18 @@ int climbStairs(int n) {
     return curr;
 }
 
+//#58 Length of Last Word
+int lengthOfLastWord(string s) {
+    int end=s.size()-1;
+    while(end>=0 && s[end]==' '){
+        end--;
+    }
+    int start=end;
+    while(start>=0 && s[start]!=' '){
+        start--;
+    }
+    return end-start;
+}
+
+
 #endif
