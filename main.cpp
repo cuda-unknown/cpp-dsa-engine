@@ -50,6 +50,7 @@ void showMenu() {
     cout << "43. Find Words Containing Character"<<endl;
     cout << "44. Climbing Stairs"<<endl;
     cout << "45. Length of Last Word"<<endl;
+    cout << "46. Search Insert Position"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -668,12 +669,12 @@ int main() {
 
     //#70  Climbing Stairs
     case 44: {
-    int steps=5;
-    cout<<"--- Staircase Solver---"<<endl;
-    for (int i=1;i<=steps;i++){
+        int steps=5;
+        cout<<"--- Staircase Solver---"<<endl;
+        for (int i=1;i<=steps;i++){
         cout<<"Steps: "<<i<<" | Distinct Ways: "<<climbStairs(i)<<endl;
-    }
-    break;
+        }
+        break;
     }
 
     //#58 Length of Last Word
@@ -685,6 +686,21 @@ int main() {
         
         cout << "Input String: \"" << s << "\"" << endl;
         cout << "Length of last word ('moon'): " << result << endl;
+        break;
+    }
+
+    //#35 Search Insert Position
+    case 46: {
+        vector<int> nums={1,3,5,6};
+        int target=5;
+        cout<<"---Search Insert Position---"<<endl;
+        int result= searchInsert(nums,target);
+        cout<<"[";
+        for(int i=0;i<nums.size();i++){
+        cout<<nums[i]<<" ";
+        }
+        cout<<"]"<<endl;
+        cout<<"Inserting Position:"<<result<<endl;
         break;
     }
 
