@@ -51,6 +51,7 @@ void showMenu() {
     cout << "44. Climbing Stairs"<<endl;
     cout << "45. Length of Last Word"<<endl;
     cout << "46. Search Insert Position"<<endl;
+    cout << "47. The Quick Sum"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -701,6 +702,15 @@ int main() {
         }
         cout<<"]"<<endl;
         cout<<"Inserting Position:"<<result<<endl;
+        break;
+    }
+
+    //
+    case 47: {
+        int a=12,b=5;
+
+        cout<<"--- The Quick Sum---"<<endl;
+        cout<<"Adding " <<a<<" + "<<b<<" ="<<sum(a,b)<<endl;
         break;
     }
 
