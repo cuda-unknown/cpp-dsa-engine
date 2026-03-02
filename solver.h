@@ -5,6 +5,7 @@
 #include<vector>
 #include <unordered_map>
 #include<unordered_set>
+#include <iomanip>
 
 using namespace std;
 
@@ -717,9 +718,9 @@ int largestAltitude(vector<int>& gain) {
 //#2942 Find Words Containing Character
 vector<int> findWordsContaining(vector<string>& words, char x) {
     vector <int> res;
-    for (int i = 0 ; i < words.size() ; i++) 
-        for (int j = 0 ; j < words[i].size() ; j++) 
-            if (words[i][j] == x) {
+    for (int i=0;i<words.size();i++) 
+        for (int j=0;j<words[i].size();j++) 
+            if (words[i][j]==x) {
                 res.push_back(i);
                 break;
             }
@@ -767,7 +768,22 @@ int lengthOfLastWord(string s) {
 
 //#2235 
 int sum(int num1, int num2) {
-        return num1+num2;
+    return num1+num2;
+}
+
+
+//#643 Maximum Average SubArray I
+double findMaxAverage(vector<int>& nums, int k) {
+    double sum=0;
+    for(int i=0;i<k;i++){
+        sum+=nums[i];
     }
+    double lmo=sum;
+    for(int i=k;i<nums.size();i++){
+        sum+=nums[i]-nums[i-k];
+        lmo=max(lmo,sum);
+    }
+    return lmo/k;
+}
 
 #endif

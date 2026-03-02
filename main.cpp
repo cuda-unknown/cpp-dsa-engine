@@ -52,6 +52,7 @@ void showMenu() {
     cout << "45. Length of Last Word"<<endl;
     cout << "46. Search Insert Position"<<endl;
     cout << "47. The Quick Sum"<<endl;
+    cout << "48. Maximum Average SubArray I"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -705,12 +706,24 @@ int main() {
         break;
     }
 
-    //
+    //2235
     case 47: {
         int a=12,b=5;
 
         cout<<"--- The Quick Sum---"<<endl;
         cout<<"Adding " <<a<<" + "<<b<<" ="<<sum(a,b)<<endl;
+        break;
+    }
+    
+    //#643 Maximum Average SubArray I
+    case 48: {
+        vector<int> nums={1,12,-5,-6,50,3};
+        int k=4;
+        cout<<"--- Max Average Subarray Solver ---"<<endl;
+    
+        double result=findMaxAverage(nums,k);
+        cout<<fixed<<setprecision(5); 
+        cout<<"Max Average of window size "<<k<<": "<<result<<endl;
         break;
     }
 
