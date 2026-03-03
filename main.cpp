@@ -53,6 +53,7 @@ void showMenu() {
     cout << "46. Search Insert Position"<<endl;
     cout << "47. The Quick Sum"<<endl;
     cout << "48. Maximum Average SubArray I"<<endl;
+    cout << "49. Design Parking System"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -724,6 +725,21 @@ int main() {
         double result=findMaxAverage(nums,k);
         cout<<fixed<<setprecision(5); 
         cout<<"Max Average of window size "<<k<<": "<<result<<endl;
+        break;
+    }
+
+    case 49: {
+        cout<<"--- OOPS Parking System Engine ---"<<endl;
+        ParkingSystem myGarage(1,1,0);
+
+        cout<<"Parking Big Car: "<<(myGarage.addCar(1) ? "Success" : "Failed")<<endl;   
+
+        cout<<"Parking Big Car again: "<<(myGarage.addCar(1) ? "Success" : "Failed")<<endl; 
+
+        cout<<"Parking Medium Car: "<<(myGarage.addCar(2) ? "Success" : "Failed")<<endl; 
+
+        cout<<"Parking Small Car: "<<(myGarage.addCar(3) ? "Success" : "Failed")<<endl; 
+
         break;
     }
 

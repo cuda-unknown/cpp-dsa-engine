@@ -33,19 +33,16 @@ bool canConstruct(string ransomNote, string magazine) {
 
 bool binarySearch(int *arr, int s, int e , int k ) {
 
-    if(s>e)
-        return false;
+    if(s>e) return false;
+    int mid=s+(e-s)/2;
+    
+    if(arr[mid]==k) return true;
 
-    int mid = s + (e-s)/2;
-
-    if(arr[mid] == k)
-        return true;
-
-    if(arr[mid] < k) {
-        return binarySearch(arr, mid+1, e, k);
+    if(arr[mid]<k) {
+        return binarySearch(arr,mid+1,e,k);
     }
     else{
-        return binarySearch(arr, s, mid-1, k);
+        return binarySearch(arr,s,mid-1,k);
     }
 }
 
@@ -61,21 +58,21 @@ void bubbleSort(int arr2[],int n){
 
 bool linearSearch(int arr[], int size, int k ) {
    
-    if(size == 0) return false;
+    if(size==0) return false;
 
-    if(arr[0] == k) return true;
+    if(arr[0]==k) return true;
     
     else {
-        bool remainingPart = linearSearch(arr+1, size-1, k );
+        bool remainingPart=linearSearch(arr+1,size-1,k);
         return remainingPart;
     }
 }
 
 int getSum(int *arr, int size) {
 
-    if(size == 0)  return 0;
+    if(size==0)  return 0;
 
-    if(size == 1 ) return arr[0];
+    if(size==1) return arr[0];
 
     int remainingPart = getSum(arr+1, size-1);
     int sum = arr[0] + remainingPart;
@@ -773,7 +770,7 @@ int sum(int num1, int num2) {
 
 
 //#643 Maximum Average SubArray I
-double findMaxAverage(vector<int>& nums, int k) {
+double findMaxAverage(vector<int>& nums,int k) {
     double sum=0;
     for(int i=0;i<k;i++){
         sum+=nums[i];
@@ -785,5 +782,27 @@ double findMaxAverage(vector<int>& nums, int k) {
     }
     return lmo/k;
 }
+
+//#1603 Design Parking System
+class ParkingSystem {
+private:
+    int big, medium, small; // Encapsulation: Keeping data private
+
+public:
+    // Constructor: Initializes the number of slots
+    ParkingSystem(int big, int medium, int small) {
+        this->big = big;
+        this->medium = medium;
+        this->small = small;
+    }
+    // Method to check and park a car
+    bool addCar(int carType) {
+        if (carType == 1 && big > 0) { big--; return true; }
+        if (carType == 2 && medium > 0) { medium--; return true; }
+        if (carType == 3 && small > 0) { small--; return true; }
+        return false;
+    }
+};
+
 
 #endif
