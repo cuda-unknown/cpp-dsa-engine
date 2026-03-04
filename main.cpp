@@ -54,6 +54,7 @@ void showMenu() {
     cout << "47. The Quick Sum"<<endl;
     cout << "48. Maximum Average SubArray I"<<endl;
     cout << "49. Design Parking System"<<endl;
+    cout << "50. Find Numbers with Even Number of Digits"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -742,6 +743,31 @@ int main() {
 
         break;
     }
+
+    case 50: {
+    Solution even;
+    vector<int> nums={12, 345, 2, 6, 7896};
+    char choice;
+    int result=0;
+
+    cout<<"--- Digit Analysis Engine (Case 50) ---"<<endl;
+    cout<<"A: Hardcoded Ranges | B: Math Loop | C: String Abstraction"<<endl;
+    cout<<"Select Method: ";
+    cin>>choice;
+
+    if (choice=='A' || choice=='a') result=even.findNumbersA(nums);
+    else if (choice=='B' || choice=='b') result=even.findNumbersB(nums);
+    else if (choice=='C' || choice=='c') result = even.findNumbersC(nums);
+    else { 
+        cout<<"Invalid choice! Defaulting to Method B."<<endl;
+        result=even.findNumbersB(nums); 
+    }
+
+    cout<<"Input Array: ";
+    for(int x : nums) cout<<x<<" ";
+    cout<<"\nResult ("<<choice<<"): "<<result<<" numbers have even digits."<<endl;
+    break;
+}
 
     default: {
         cout<<"Invalid choice!"<<endl;

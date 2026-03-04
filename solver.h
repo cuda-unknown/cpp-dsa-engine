@@ -804,5 +804,41 @@ public:
     }
 };
 
+//#1295 Find Numbers with Even Number of Digits
+class Solution {
+public:
+    // Method A: The Hardcoded Range (Speed)
+    int findNumbersA(vector<int>& nums) {
+        int count=0;
+        for (int n : nums) {
+            if ((10<=n && n<=99) || (1000<=n && n<=9999) || (n==100000)) count++;
+        }
+        return count;
+    }
+
+    // Method B: The Mathematical Loop (Scalable)
+    int findNumbersB(vector<int>& nums) {
+        int totalEven=0;
+        for (int n : nums) {
+            int digits=0;
+            while (n>0) {
+                n=n/10;
+                digits++;
+            }
+            if (digits%2==0) totalEven++;
+        }
+        return totalEven;
+    }
+
+    // Method C: The String Abstraction (Readable)
+    int findNumbersC(vector<int>& nums) {
+        int evenCount = 0;
+        for (int n : nums) {
+            if (to_string(n).size()%2==0) evenCount++;
+        }
+        return evenCount;
+    }
+};
+
 
 #endif
