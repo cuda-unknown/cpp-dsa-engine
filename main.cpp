@@ -55,6 +55,7 @@ void showMenu() {
     cout << "48. Maximum Average SubArray I"<<endl;
     cout << "49. Design Parking System"<<endl;
     cout << "50. Find Numbers with Even Number of Digits"<<endl;
+    cout << "51. Subtract the Product and Sum of Digits of an Integer"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -744,6 +745,7 @@ int main() {
         break;
     }
 
+    //#1295 Find Numbers with Even Number of Digits
     case 50: {
     Solution even;
     vector<int> nums={12, 345, 2, 6, 7896};
@@ -767,7 +769,17 @@ int main() {
     for(int x : nums) cout<<x<<" ";
     cout<<"\nResult ("<<choice<<"): "<<result<<" numbers have even digits."<<endl;
     break;
-}
+    }
+    
+    //#1281 Subtract the Product and Sum of Digits of an Integer
+    case 51: {
+        DigitSolver solver;
+        int n=234;
+        int result=solver.subtractProductAndSum(n);
+        cout<<"--- Digital Logic Engine ---"<<endl;
+        cout<<"Input: "<<n<<" | Result: "<<result<<endl;
+        break;
+    }
 
     default: {
         cout<<"Invalid choice!"<<endl;

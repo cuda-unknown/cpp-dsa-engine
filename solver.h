@@ -840,5 +840,23 @@ public:
     }
 };
 
+//#1281 Subtract the Product and Sum of Digits of an Integer
+class DigitSolver {
+public:
+    int subtractProductAndSum(int n) {
+        int result=0;
+        int sum=0; 
+        int product=1;
+        while(n>0){
+            int digit=n%10;
+            sum+=digit;
+            product*=digit;
+            n=n/10;
+        }
+        result=product-sum;
+        return result;
+    }
+};
+
 
 #endif
