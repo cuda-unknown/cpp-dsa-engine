@@ -56,6 +56,7 @@ void showMenu() {
     cout << "49. Design Parking System"<<endl;
     cout << "50. Find Numbers with Even Number of Digits"<<endl;
     cout << "51. Subtract the Product and Sum of Digits of an Integer"<<endl;
+    cout << "52. Number of Steps to Reduce a Number to Zero"<<endl; 
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -778,6 +779,17 @@ int main() {
         int result=solver.subtractProductAndSum(n);
         cout<<"--- Digital Logic Engine ---"<<endl;
         cout<<"Input: "<<n<<" | Result: "<<result<<endl;
+        break;
+    }
+
+    //#1342. Number of Steps to Reduce a Number to Zero
+    case 52: {
+        Stepcounter solver; 
+        int n = 14;
+        int result=solver.numberOfSteps(n);
+        cout<<"--- Step Reducer System ---"<<endl;
+        cout<<"NUmber:"<<n<<endl;
+        cout<<"Steps to Reach Zero(0):"<<result<<endl;
         break;
     }
 
