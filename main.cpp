@@ -57,6 +57,7 @@ void showMenu() {
     cout << "50. Find Numbers with Even Number of Digits"<<endl;
     cout << "51. Subtract the Product and Sum of Digits of an Integer"<<endl;
     cout << "52. Number of Steps to Reduce a Number to Zero"<<endl; 
+    cout << "53. Reverse Integer"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -785,11 +786,22 @@ int main() {
     //#1342. Number of Steps to Reduce a Number to Zero
     case 52: {
         Stepcounter solver; 
-        int n = 14;
+        int n=14;
         int result=solver.numberOfSteps(n);
         cout<<"--- Step Reducer System ---"<<endl;
         cout<<"NUmber:"<<n<<endl;
         cout<<"Steps to Reach Zero(0):"<<result<<endl;
+        break;
+    }
+
+    //#7 Reverse Integer
+    case 53: {
+        Rev solver;
+        int n=-321;
+        int result=solver.reverse(n);
+        cout<<"--- Reverese Integer Engine ---"<<endl;
+        cout<<"Integer:"<<n<<endl;
+        cout<<"Result:"<<result<<endl;
         break;
     }
 
