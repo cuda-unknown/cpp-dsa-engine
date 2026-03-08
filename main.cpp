@@ -58,6 +58,7 @@ void showMenu() {
     cout << "51. Subtract the Product and Sum of Digits of an Integer"<<endl;
     cout << "52. Number of Steps to Reduce a Number to Zero"<<endl; 
     cout << "53. Reverse Integer"<<endl;
+    cout << "54. Container with Most Water "<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -798,12 +799,27 @@ int main() {
     case 53: {
         Rev solver;
         int n=-321;
+
         int result=solver.reverse(n);
+
         cout<<"--- Reverese Integer Engine ---"<<endl;
         cout<<"Integer:"<<n<<endl;
         cout<<"Result:"<<result<<endl;
         break;
     }
+
+    //#11 Container with Most Water 
+    case 54: {
+        MostWater solver;
+        vector<int> heights={1,8,6,2,5,4,8,3,7};
+    
+        int result=solver.maxArea(heights);
+
+        cout<<"--- Container With Most Water ---"<<endl;
+        cout<<"Max Water Capacity: "<<result<<" units"<<endl;
+        break;
+    }
+    
 
     default: {
         cout<<"Invalid choice!"<<endl;

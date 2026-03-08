@@ -889,4 +889,23 @@ public:
     }
 };
 
+//#11 Container with Most Water 
+class MostWater {
+public:
+    int maxArea(vector<int>& height) {
+        int s=0;
+        int e=height.size()-1;
+        int max_water=0;
+        while(s<e){
+            int width=e-s;
+            int curr_height=min(height[s],height[e]);
+            int water=width*curr_height;
+            max_water=max(max_water,water);
+            if(height[s]<height[e]) s++;
+            else e--;
+        }
+        return max_water;
+    }
+};
+
 #endif
