@@ -819,6 +819,18 @@ int main() {
         cout<<"Max Water Capacity: "<<result<<" units"<<endl;
         break;
     }
+
+    //#55. Jump Game
+    case 55: {
+        Jump solver;
+        vector<int> nums={2,3,1,1,4};
+        
+        bool result=solver.canJump(nums);
+
+        cout<<"--- Medium: Jump Game ---"<<endl;
+        cout<<"Can reach the end: "<<(result ? "YES" : "NO")<<endl;
+        break;
+    }
     
 
     default: {
