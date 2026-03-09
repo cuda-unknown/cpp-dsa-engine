@@ -909,7 +909,7 @@ public:
 };
 
 //#55. Jump Game
-class Jump {
+class Jumps {
 public:
     bool canJump(vector<int>& nums) {
         int reach=0;
@@ -922,5 +922,24 @@ public:
     }
 };
 
+//#45 Jump Game II
+class GreedyJump {
+public:
+    int jump(vector<int>& nums) {
+        int jump=0;
+        int farthest=0;
+        int reach=0;
+        if(nums.size()<=1) return 0;
+        for(int i=0;i<nums.size()-1;i++){
+            farthest=max(farthest,i+nums[i]);
+            if(i==reach){
+                jump++;
+                reach=farthest;
+                if(reach>=nums.size()-1) break;
+            } 
+        }
+        return jump;
+    }
+};
 
 #endif

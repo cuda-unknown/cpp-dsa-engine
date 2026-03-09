@@ -59,6 +59,8 @@ void showMenu() {
     cout << "52. Number of Steps to Reduce a Number to Zero"<<endl; 
     cout << "53. Reverse Integer"<<endl;
     cout << "54. Container with Most Water "<<endl;
+    cout << "55. Jump Game"<<endl;
+    cout << "56. Jump Game II"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -750,28 +752,28 @@ int main() {
 
     //#1295 Find Numbers with Even Number of Digits
     case 50: {
-    Solution even;
-    vector<int> nums={12, 345, 2, 6, 7896};
-    char choice;
-    int result=0;
+        Solution even;
+        vector<int> nums={12, 345, 2, 6, 7896};
+        char choice;
+        int result=0;
 
-    cout<<"--- Digit Analysis Engine (Case 50) ---"<<endl;
-    cout<<"A: Hardcoded Ranges | B: Math Loop | C: String Abstraction"<<endl;
-    cout<<"Select Method: ";
-    cin>>choice;
+        cout<<"--- Digit Analysis Engine (Case 50) ---"<<endl;
+        cout<<"A: Hardcoded Ranges | B: Math Loop | C: String Abstraction"<<endl;
+        cout<<"Select Method: ";
+        cin>>choice;
 
-    if (choice=='A' || choice=='a') result=even.findNumbersA(nums);
-    else if (choice=='B' || choice=='b') result=even.findNumbersB(nums);
-    else if (choice=='C' || choice=='c') result = even.findNumbersC(nums);
-    else { 
-        cout<<"Invalid choice! Defaulting to Method B."<<endl;
-        result=even.findNumbersB(nums); 
-    }
+        if (choice=='A' || choice=='a') result=even.findNumbersA(nums);
+        else if (choice=='B' || choice=='b') result=even.findNumbersB(nums);
+        else if (choice=='C' || choice=='c') result = even.findNumbersC(nums);
+        else { 
+            cout<<"Invalid choice! Defaulting to Method B."<<endl;
+            result=even.findNumbersB(nums); 
+        }
 
-    cout<<"Input Array: ";
-    for(int x : nums) cout<<x<<" ";
-    cout<<"\nResult ("<<choice<<"): "<<result<<" numbers have even digits."<<endl;
-    break;
+        cout<<"Input Array: ";
+        for(int x : nums) cout<<x<<" ";
+        cout<<"\nResult ("<<choice<<"): "<<result<<" numbers have even digits."<<endl;
+        break;
     }
     
     //#1281 Subtract the Product and Sum of Digits of an Integer
@@ -822,13 +824,25 @@ int main() {
 
     //#55. Jump Game
     case 55: {
-        Jump solver;
+        Jumps solver;
         vector<int> nums={2,3,1,1,4};
         
         bool result=solver.canJump(nums);
 
-        cout<<"--- Medium: Jump Game ---"<<endl;
+        cout<<"--- Jump Game ---"<<endl;
         cout<<"Can reach the end: "<<(result ? "YES" : "NO")<<endl;
+        break;
+    }
+
+    //#45 Jump Game II
+    case 56: {
+        GreedyJump solver;
+        vector<int> nums={2,3,1,1,4};
+
+        int result=solver.jump(nums);
+
+        cout<<"--- Jump Game II"<<endl;
+        cout<<"Can Jump: "<<result<<endl;
         break;
     }
     
