@@ -61,6 +61,7 @@ void showMenu() {
     cout << "54. Container with Most Water "<<endl;
     cout << "55. Jump Game"<<endl;
     cout << "56. Jump Game II"<<endl;
+    cout << "57. Product of Array Except Self"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -843,6 +844,20 @@ int main() {
 
         cout<<"--- Jump Game II"<<endl;
         cout<<"Can Jump: "<<result<<endl;
+        break;
+    }
+
+    //#238 Product of Array Except Self
+    case 57: {
+        ProductArray solver;
+        vector<int> nums={1,2,3,4};
+        vector<int> result=solver.productExceptSelf(nums);
+        
+        cout<<"--- Product of Array Except Self Engine ---"<<endl;
+        cout<<"Result:";
+        for(int i:result) cout<<i<<" ";
+        cout<<endl;
+
         break;
     }
     
