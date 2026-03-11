@@ -962,6 +962,22 @@ public:
     }
 };
 
+//#560 Subarray Sum Equals K
+int subarraySum(vector<int>& nums, int k) {
+    int count=0;
+    int curr_sum=0;
+    unordered_map<int,int> prevsum;
+    prevsum[0]=1;
+    for(int i:nums){
+        curr_sum+=i;
+        if(prevsum.find(curr_sum-k)!=prevsum.end())
+            count+=prevsum[curr_sum-k];
+        
+        prevsum[curr_sum]++;
+    } 
+    return count;
+}
+
 
 
 #endif

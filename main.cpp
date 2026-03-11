@@ -62,6 +62,7 @@ void showMenu() {
     cout << "55. Jump Game"<<endl;
     cout << "56. Jump Game II"<<endl;
     cout << "57. Product of Array Except Self"<<endl;
+    cout << "58. Subarray Sum Equals K"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -858,6 +859,18 @@ int main() {
         for(int i:result) cout<<i<<" ";
         cout<<endl;
 
+        break;
+    }
+
+    //#560 Subarray Sum Equals K
+    case 58: {
+        vector<int> nums={1,1,1};
+        int k=2;
+    
+        int result=subarraySum(nums,k);
+
+        cout<<"--- Medium: Subarray Sum Equals K ---"<<endl;
+        cout<<"Total Subarrays: "<<result<<endl;
         break;
     }
     
