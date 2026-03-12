@@ -63,6 +63,7 @@ void showMenu() {
     cout << "56. Jump Game II"<<endl;
     cout << "57. Product of Array Except Self"<<endl;
     cout << "58. Subarray Sum Equals K"<<endl;
+    cout << "59. Continuous Subarray Sum"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -874,6 +875,17 @@ int main() {
         break;
     }
     
+    //#523 Continuous Subarray Sum
+    case 59: {
+        vector<int> nums={23,2,4,6,7};
+        int k=6;
+    
+        bool result=checkSubarraySum(nums,k);
+
+        cout<<"--- Continuous Subarray Sum ---"<<endl;
+        cout<<"Has multiple of "<<k<<": "<<(result ? "YES" : "NO")<<endl;
+        break;
+    }
 
     default: {
         cout<<"Invalid choice!"<<endl;
