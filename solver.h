@@ -80,23 +80,23 @@ int getSum(int *arr, int size) {
     return sum;
 }
 
-bool isSorted(int arr[], int size) {
+bool isSorted(int arr[],int size) {
 
-    if(size == 0 || size == 1 )  return true;
+    if(size==0 || size==1)  return true;
 
-    if(arr[0] > arr[1])  return false;
+    if(arr[0]>arr[1])  return false;
    
     else {
-        bool remainingPart = isSorted(arr + 1, size - 1 );
+        bool remainingPart=isSorted(arr+1,size-1);
         return remainingPart;
     }
 }
 
 // Using Recursion to Reverse String 
-void reverseString(string& s, int i, int j) {
-    if(i > j) return;
-    swap(s[i], s[j]);
-    reverseString(s, i + 1, j - 1);
+void reverseString(string& s,int i,int j) {
+    if(i>j) return;
+    swap(s[i],s[j]);
+    reverseString(s,i+1,j-1);
 }
 
  // Fast for Reversing String 
@@ -105,21 +105,21 @@ void reverseString(string& s, int i, int j) {
  }
 
 // Recursive Palindrome Check
-bool isPalindrome(string s, int i, int j) {
-    if(i > j) return true;
-    if(s[i] != s[j]) return false;
-    return isPalindrome(s, i + 1, j - 1);
+bool isPalindrome(string s,int i,int j) {
+    if(i>j) return true;
+    if(s[i] !=s[j]) return false;
+    return isPalindrome(s,i+1,j-1);
 }
 
 // Power Function (a^b)
-long long power(int a, int b) {
-    if(b == 0) return 1;
-    if(b == 1) return a;
+long long power(int a,int b) {
+    if(b==0) return 1;
+    if(b==1) return a;
     
-    long long ans = power(a, b/2);
+    long long ans=power(a,b/2);
     
-    if(b % 2 == 0) return ans * ans; 
-    else return a * ans * ans;       
+    if(b % 2==0) return ans*ans; 
+    else return a*ans*ans;       
 }
 
 // Merge Sort
@@ -179,11 +179,11 @@ void mergeSort(int arr[], int s, int e) {
 
 // Quick Sort
 int partition(int arr[], int s, int e) {
-    int pivot = arr[s];
+    int pivot=arr[s];
 
     // step1: count elements smaller than pivot
-    int cnt = 0;
-    for (int i = s + 1; i <= e; i++) {
+    int cnt=0;
+    for (int i = s + 1;i <= e;i++) {
         if (arr[i] <= pivot) {
             cnt++;
         }
@@ -995,6 +995,20 @@ bool checkSubarraySum(vector<int>& nums, int k) {
     }
     return false;
 }
+
+//#75 Sort Colors
+void sortColors(vector<int>& nums) {
+    int low=0,mid=0,high=nums.size()-1;
+    while(mid<=high){
+        if(nums[mid]==0) swap(nums[low++],nums[mid++]);
+        else if(nums[mid]==1) mid++;
+        else swap(nums[mid],nums[high--]);
+    }
+}
+
+
+
+
 
 
 

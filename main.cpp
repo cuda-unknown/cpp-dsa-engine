@@ -64,6 +64,7 @@ void showMenu() {
     cout << "57. Product of Array Except Self"<<endl;
     cout << "58. Subarray Sum Equals K"<<endl;
     cout << "59. Continuous Subarray Sum"<<endl;
+    cout << "60. Sort Colors"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -884,6 +885,22 @@ int main() {
 
         cout<<"--- Continuous Subarray Sum ---"<<endl;
         cout<<"Has multiple of "<<k<<": "<<(result ? "YES" : "NO")<<endl;
+        break;
+    }
+
+    case 60: {
+        vector<int> nums={2,0,2,1,1,0};
+        cout<<"--- Sort Colors ---"<<endl;
+
+        cout<<"Before Sorting:";
+        for(int i:nums) cout<<i<<" ";
+        cout<<endl;
+
+        sortColors(nums);
+        cout<<"After Sorting:";
+        for(int i:nums) cout<<i<<" ";
+            
+        cout<<endl;
         break;
     }
 
