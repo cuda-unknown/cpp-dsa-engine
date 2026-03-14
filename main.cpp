@@ -65,6 +65,7 @@ void showMenu() {
     cout << "58. Subarray Sum Equals K"<<endl;
     cout << "59. Continuous Subarray Sum"<<endl;
     cout << "60. Sort Colors"<<endl;
+    cout << "61. Search in Rotated Sorted Array"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -901,6 +902,16 @@ int main() {
         for(int i:nums) cout<<i<<" ";
             
         cout<<endl;
+        break;
+    }
+
+    //#33 Search in Rotated Sorted Array
+    case 61: {
+        vector<int> nums={4,5,6,7,0,1,2};
+        int target=0;
+        cout<<"--- Search in Rotated Sorted Array Engine ---"<<endl;
+        int result=search(nums,target);
+        cout<<"Searched :"<<result<<endl;
         break;
     }
 
