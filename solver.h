@@ -1025,6 +1025,21 @@ int search(vector<int>& nums, int target) {
     return -1;
 }
 
+//#56 Merge Intervals
+class Merge{
+public:
+    vector<vector<int>> merge(vector<vector<int>>& intervals) {
+        if(intervals.empty()) return {};
+        sort(intervals.begin(),intervals.end());
+        vector<vector<int>> merged;
+        for(auto& i:intervals){
+            if(merged.empty() || merged.back()[1] <i[0]) merged.push_back(i);
+
+            else(merged.back()[1]=max(merged.back()[1],i[1]));
+        }
+        return merged;
+    }
+};
 
 
 #endif

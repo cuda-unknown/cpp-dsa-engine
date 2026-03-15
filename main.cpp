@@ -66,6 +66,7 @@ void showMenu() {
     cout << "59. Continuous Subarray Sum"<<endl;
     cout << "60. Sort Colors"<<endl;
     cout << "61. Search in Rotated Sorted Array"<<endl;
+    cout << "62. Merge Intervals"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -75,26 +76,28 @@ int main() {
     int choice;
    do{
         showMenu();
-        cin >> choice;
-    if(choice ==0) break;
-        switch(choice) {
-    case 1:{
-    if (isAnagram("anagram", "nagaram")) {
-        cout << "[PASS] Anagram Logic Correct" << endl;
-    } else {
-        cout << "[FAIL] Anagram Logic Error" << endl;
-    }
-    break;
-    }
+        cin>>choice;
+        if(choice==0) break;
 
-    case 2:{
-    if (canConstruct("aa", "aab")) {
-        cout << "[PASS] Ransom Note Logic Correct" << endl;
-    } else {
-        cout << "[FAIL] Ransom Note Logic Error" << endl;
-    }
-    break;
-    }
+        switch(choice) {
+    
+        case 1:{
+            if(isAnagram("anagram", "nagaram")) {
+            cout<<"[PASS] Anagram Logic Correct"<<endl;
+            }else{
+            cout<<"[FAIL] Anagram Logic Error"<<endl;
+            }
+            break;
+        }
+
+        case 2:{
+            if (canConstruct("aa", "aab")) {
+            cout<<"[PASS] Ransom Note Logic Correct"<<endl;
+            }else{
+            cout<<"[FAIL] Ransom Note Logic Error"<<endl;
+            }
+            break;
+        }
 
     case 3:{
     int arr[] = {2, 4, 6, 10, 14, 18};
@@ -889,6 +892,7 @@ int main() {
         break;
     }
 
+    //#75 Sort Colors
     case 60: {
         vector<int> nums={2,0,2,1,1,0};
         cout<<"--- Sort Colors ---"<<endl;
@@ -912,6 +916,28 @@ int main() {
         cout<<"--- Search in Rotated Sorted Array Engine ---"<<endl;
         int result=search(nums,target);
         cout<<"Searched :"<<result<<endl;
+        break;
+    }
+
+    //#56 Merge Intervals
+    case 62: {
+        Merge solver;
+        vector<vector<int>> intervals={{1,3},{2,6},{8,10},{15,18}};
+    
+        cout<<"--- Merge Intervals ---"<<endl;
+        cout<<"Original Intervals: ";
+        for(const auto& interval : intervals){
+        cout<<"["<<interval[0]<<","<<interval[1]<<"] ";
+        }
+        cout<<endl;
+
+       vector<vector<int>> result=solver.merge(intervals);
+       cout<<"Merged Intervals:   ";
+       for(const auto& interval : result) {
+            cout<<"["<<interval[0]<<","<<interval[1]<<"] ";
+        }
+        cout<<endl;
+    
         break;
     }
 
