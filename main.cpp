@@ -67,6 +67,7 @@ void showMenu() {
     cout << "60. Sort Colors"<<endl;
     cout << "61. Search in Rotated Sorted Array"<<endl;
     cout << "62. Merge Intervals"<<endl;
+    cout << "63. Longest Substring Without Repeating Characters"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -938,6 +939,18 @@ int main() {
         }
         cout<<endl;
     
+        break;
+    }
+
+    //#3 Longest Substring Without Repeating Characters
+    case 63: {
+        string s="abcabcbb";
+    
+        int result=lengthOfLongestSubstring(s);
+
+        cout<<"--- Longest Substring Without Repeating Characters ---"<<endl;
+        cout<<"Input: "<<s<<endl;
+        cout<<"Length: "<<result<<endl;
         break;
     }
 

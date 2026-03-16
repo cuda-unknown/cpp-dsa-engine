@@ -1041,5 +1041,19 @@ public:
     }
 };
 
+//#3 Longest Substring Without Repeating Characters
+int lengthOfLongestSubstring(string s) {
+    unordered_map<char,int> Map;
+    int l=0,maxlen=0;
+    for(int r=0; r<s.length();r++){
+        if(Map.count(s[r]) && Map[s[r]]>=l)  l=Map[s[r]]+1;
+        
+        Map[s[r]]=r;
+
+        maxlen=max(maxlen,r-l+1);
+    }
+    return maxlen;
+}
+
 
 #endif
