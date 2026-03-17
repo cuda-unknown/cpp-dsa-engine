@@ -68,6 +68,7 @@ void showMenu() {
     cout << "61. Search in Rotated Sorted Array"<<endl;
     cout << "62. Merge Intervals"<<endl;
     cout << "63. Longest Substring Without Repeating Characters"<<endl;
+    cout << "64. Longest Repeating Character Replacement"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -951,6 +952,19 @@ int main() {
         cout<<"--- Longest Substring Without Repeating Characters ---"<<endl;
         cout<<"Input: "<<s<<endl;
         cout<<"Length: "<<result<<endl;
+        break;
+    }
+
+    //#424 Longest Repeating Character Replacement
+    case 64: {
+        string s="AABABBA";
+        int k=1;
+    
+        int result=characterReplacement(s,k);
+
+        cout<<"--- Longest Repeating Character Replacement ---"<<endl;
+        cout<<"Input: "<<s<<", k: "<<k<<endl;
+        cout<<"Result: "<<result<<endl;
         break;
     }
 

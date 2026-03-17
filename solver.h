@@ -1055,5 +1055,22 @@ int lengthOfLongestSubstring(string s) {
     return maxlen;
 }
 
+//#424 Longest Repeating Character Replacement
+int characterReplacement(string s, int k) {
+    vector<int> count(26,0);
+    int maxcount=0;
+    int left=0;
+    int maxlen=0;
+    for(int i=0;i<s.size();i++){
+        maxcount=max(maxcount,++count[s[i]-'A']);
+        while((i-left+1)-maxcount>k){
+            count[s[left]-'A']--;
+            left++;
+        }
+        maxlen=max(maxlen,i-left+1);
+    }
+    return maxlen;
+}
+
 
 #endif
