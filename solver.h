@@ -1072,5 +1072,37 @@ int characterReplacement(string s, int k) {
     return maxlen;
 }
 
+//
+class Window {
+public:
+    string minWindow(string s, string t) {
+        if(s.empty() || t.empty()) return "";
+        unordered_map<char,int> fcount;
+        for(char c:t) fcount[c]++;
+        int l=0,r=0;
+        int req=fcount.size();
+        int formed=0;
+        unordered_map<char,int> wcnt;
+        int minlen=INT_MAX;
+        int st_indx=0;
+        while(r<s.length()){
+            char c=s[r];
+            wcnt[c]++;
+            if(fcount.count(c) && wcnt[c]==fcount[c]) formed++;
+            while(l<=r && formed==req){
+                c=s[l];
+                if(r-l+1<minlen){
+                    minlen=r-l+1;
+                    st_indx=l;
+                }
+                wcnt[c]--;
+                if(fcount.count(c) && wcnt[c]<fcount[c]) formed--;
+                l++;
+            }
+            r++;
+        }
+        return(minlen==INT_MAX) ? "" : s.substr(st_indx,minlen);
+    }
+};
 
 #endif

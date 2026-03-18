@@ -69,6 +69,7 @@ void showMenu() {
     cout << "62. Merge Intervals"<<endl;
     cout << "63. Longest Substring Without Repeating Characters"<<endl;
     cout << "64. Longest Repeating Character Replacement"<<endl;
+    cout << "65. Minimum Window Substring"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -967,6 +968,19 @@ int main() {
         cout<<"Result: "<<result<<endl;
         break;
     }
+
+    //#76 Minimum Window Substring
+    case 65: {
+        Window solver;
+        string s="ADOBECODEBANC";
+        string t="ABC";
+        string result=solver. minWindow(s,t);
+        cout<<"--- Minimum Window Substring Engine ---"<<endl;
+        cout<<"Input S:"<<s<<" ,T:"<<t<<endl;
+        cout<<"Result: "<<result<<endl;
+        break;
+    }
+    
 
     default: {
         cout<<"Invalid choice!"<<endl;
