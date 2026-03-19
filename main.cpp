@@ -70,6 +70,7 @@ void showMenu() {
     cout << "63. Longest Substring Without Repeating Characters"<<endl;
     cout << "64. Longest Repeating Character Replacement"<<endl;
     cout << "65. Minimum Window Substring"<<endl;
+    cout << "66. Min Stack"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -978,6 +979,25 @@ int main() {
         cout<<"--- Minimum Window Substring Engine ---"<<endl;
         cout<<"Input S:"<<s<<" ,T:"<<t<<endl;
         cout<<"Result: "<<result<<endl;
+        break;
+    }
+
+    //#155 Min Stack
+    case 66: {
+        cout<<"--- Min Stack ---"<<endl;
+        MinStack* myStack=new MinStack();
+    
+        myStack->push(-2);
+        myStack->push(0);
+        myStack->push(-3);
+    
+        cout<<"Current Min: "<<myStack->getMin()<<" (Expected: -3)"<<endl;
+    
+        myStack->pop();
+        cout<<"After Pop, Top: "<<myStack->top()<<" (Expected: 0)"<<endl;
+        cout<<"New Min:     "<<myStack->getMin()<<" (Expected: -2)"<<endl;
+    
+        delete myStack; 
         break;
     }
     
