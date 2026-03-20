@@ -71,6 +71,7 @@ void showMenu() {
     cout << "64. Longest Repeating Character Replacement"<<endl;
     cout << "65. Minimum Window Substring"<<endl;
     cout << "66. Min Stack"<<endl;
+    cout << "67. Evaluate Reverse Polish Notation"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -1000,7 +1001,17 @@ int main() {
         delete myStack; 
         break;
     }
+
+    //#150 Evaluate Reverse Polish Notation
+    case 67: {
+        vector<string> tokens = {"10","6","9","3","+","-11","*","/","*","17","+","5","+"};
     
+        int result=evalRPN(tokens);
+
+        cout<<"--- Evaluate Reverse Polish Notation ---"<<endl;
+        cout<<"Result: "<<result<<" (Expected: 22)"<<endl;
+        break;
+    }
 
     default: {
         cout<<"Invalid choice!"<<endl;
