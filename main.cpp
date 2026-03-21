@@ -72,6 +72,7 @@ void showMenu() {
     cout << "65. Minimum Window Substring"<<endl;
     cout << "66. Min Stack"<<endl;
     cout << "67. Evaluate Reverse Polish Notation"<<endl;
+    cout << "68. Daily Temperatures"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -1010,6 +1011,26 @@ int main() {
 
         cout<<"--- Evaluate Reverse Polish Notation ---"<<endl;
         cout<<"Result: "<<result<<" (Expected: 22)"<<endl;
+        break;
+    }
+
+    //#739 Daily Temperatures
+    case 68: {
+        vector<int> temps={73,74,75,71,69,72,76,73};
+    
+        vector<int> result=dailyTemperatures(temps);
+
+        cout<<"--- Daily Temperatures ---"<<endl;
+        cout<<"Temps:  ";
+        for(int t : temps){
+            cout<<t<< " ";
+        }
+        cout<<"\nWait:   ";
+        
+        for(int r : result){
+            cout<<r<<" ";
+        }
+        cout<<endl;
         break;
     }
 
