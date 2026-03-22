@@ -1156,17 +1156,38 @@ int evalRPN(vector<string>& tokens) {
 
 //#739 Daily Temperatures
 vector<int> dailyTemperatures(vector<int>& temperatures) {
-        int n=temperatures.size();
-        vector<int> res(n,0);
-        stack<int> st;
-        for(int i=0;i<n;i++){
-            while(!st.empty() && temperatures[i]> temperatures[st.top()]){
-                int prev=st.top();
-                st.pop();
-                res[prev]=i-prev;
-            }
-            st.push(i);
+    int n=temperatures.size();
+    vector<int> res(n,0);
+    stack<int> st;
+    for(int i=0;i<n;i++){
+        while(!st.empty() && temperatures[i]> temperatures[st.top()]){
+            int prev=st.top();
+            st.pop();
+            res[prev]=i-prev;
         }
-        return res;
+        st.push(i);
     }
+    return res;
+}
+
+//#84 Largest Rectangle in Histogram
+int largestRectangleArea(vector<int>& heights) {
+    stack<int> st;
+    int maxArea=0;
+    heights.push_back(0);
+    int n=heights.size();
+    for(int i=0;i<n;i++){
+        while(!st.empty() && heights[i]<heights[st.top()]){
+            int h=heights[st.top()];
+            st.pop();
+            int w=st.empty() ? i:i-st.top()-1;
+            maxArea=max(maxArea,h*w);
+        }
+        st.push(i);
+    }
+    heights.pop_back();
+    return maxArea;
+}
+
+
 #endif

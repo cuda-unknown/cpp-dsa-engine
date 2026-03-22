@@ -73,6 +73,7 @@ void showMenu() {
     cout << "66. Min Stack"<<endl;
     cout << "67. Evaluate Reverse Polish Notation"<<endl;
     cout << "68. Daily Temperatures"<<endl;
+    cout << "69. Largest Rectangle in Histogram"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -1031,6 +1032,19 @@ int main() {
             cout<<r<<" ";
         }
         cout<<endl;
+        break;
+    }
+
+    //#84 Largest Rectangle in Histogram
+    case 69: {
+        vector<int> heights={2,1,5,6,2,3};
+        int result=largestRectangleArea(heights);
+        cout<<"--- Largest Rectangle in Histogram ---"<<endl;
+        cout<<"Heights: ";
+        for(int h : heights){
+            cout << h << " ";
+        }
+        cout<<"\nMax Area: "<<result<<endl;
         break;
     }
 
