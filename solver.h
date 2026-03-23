@@ -1189,5 +1189,18 @@ int largestRectangleArea(vector<int>& heights) {
     return maxArea;
 }
 
+//#367 Valid Perfect Square
+bool isPerfectSquare(int num) {
+    int l=1,r=num;
+    while(l<=r){
+        long long mid=l+(r-l)/2;
+        if((mid*mid)==num) return true;
+        else if((mid*mid)>num) r=mid-1;
+        else l=mid+1;
+    }
+    return false;
+}
+
+
 
 #endif

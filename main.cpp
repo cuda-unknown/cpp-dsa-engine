@@ -74,6 +74,7 @@ void showMenu() {
     cout << "67. Evaluate Reverse Polish Notation"<<endl;
     cout << "68. Daily Temperatures"<<endl;
     cout << "69. Largest Rectangle in Histogram"<<endl;
+    cout << "70. Valid Perfect Square"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -1045,6 +1046,16 @@ int main() {
             cout << h << " ";
         }
         cout<<"\nMax Area: "<<result<<endl;
+        break;
+    }
+
+    //#367 Valid Perfect Square
+    case 70: {
+        int testNum=16;
+        bool result=isPerfectSquare(testNum);
+    
+        cout<<"--- Valid Perfect Square ---"<<endl;
+        cout<<"Is "<<testNum<<" a perfect square? "<<(result ? "YES" : "NO")<<endl;
         break;
     }
 
