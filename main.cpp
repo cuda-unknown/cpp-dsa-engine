@@ -75,6 +75,7 @@ void showMenu() {
     cout << "68. Daily Temperatures"<<endl;
     cout << "69. Largest Rectangle in Histogram"<<endl;
     cout << "70. Valid Perfect Square"<<endl;
+    cout << "71. Find Minimum in Rotated Sorted Array"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -1056,6 +1057,16 @@ int main() {
     
         cout<<"--- Valid Perfect Square ---"<<endl;
         cout<<"Is "<<testNum<<" a perfect square? "<<(result ? "YES" : "NO")<<endl;
+        break;
+    }
+
+    //#153 Find Minimum in Rotated Sorted Array
+    case 71: {
+        vector<int> nums={3,4,5,1,2};
+        int result=findMin(nums);
+        cout<<"--- Find Minimum in Rotated Sorted Array ---"<<endl;
+        cout<<"Minimum is "<<result<<" in Rotaed Sorted Array";
+        cout<<endl;
         break;
     }
 
