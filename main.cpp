@@ -76,6 +76,7 @@ void showMenu() {
     cout << "69. Largest Rectangle in Histogram"<<endl;
     cout << "70. Valid Perfect Square"<<endl;
     cout << "71. Find Minimum in Rotated Sorted Array"<<endl;
+    cout << "72. Count Submatrices With Equal Frequency of X and Y"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -1067,6 +1068,24 @@ int main() {
         cout<<"--- Find Minimum in Rotated Sorted Array ---"<<endl;
         cout<<"Minimum is "<<result<<" in Rotaed Sorted Array";
         cout<<endl;
+        break;
+    }
+
+    //#3212 Count Submatrices With Equal Frequency of X and Y
+    case 72: {
+        vector<vector<char>> grid={
+        {'.', 'X', '.'},
+        {'Y', '.', '.'}
+        };
+
+        cout<<"--- Count Submatrices With Equal X and Y ---"<<endl;
+        cout<<"Grid Layout:"<<endl;
+        for(const auto& row : grid){
+        for(char c : row) cout<<c<<" ";
+        cout<<endl;
+        }
+        int result=numberOfSubmatrices(grid);
+        cout<<"Valid Submatrices starting from (0,0): "<<result<<endl;
         break;
     }
 

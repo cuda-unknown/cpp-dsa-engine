@@ -1212,4 +1212,25 @@ int findMin(vector<int>& nums) {
     return nums[l];
 }
 
+//#3212 Count Submatrices With Equal Frequency of X and Y
+int numberOfSubmatrices(vector<vector<char>>& grid) {
+    int row=grid.size();
+    int col=grid[0].size();
+    vector<vector<int>> prefX(row+1,vector<int> (col+1,0));
+    vector<vector<int>> prefY(row+1,vector<int> (col+1,0));
+    int count=0;
+    for(int i=0;i<row;i++){
+        for(int j=0;j<col;j++){
+            prefX[i+1][j+1]=prefX[i][j+1]+prefX[i+1][j]-prefX[i][j]+(grid[i][j]=='X');
+            prefY[i+1][j+1]=prefY[i][j+1]+prefY[i+1][j]-prefY[i][j]+(grid[i][j]=='Y');
+            
+            if(prefX[i+1][j+1]==prefY[i+1][j+1] && prefX[i+1][j+1]>0) count++;
+        }
+    }
+    return count;
+}
+
+
+
+
 #endif
