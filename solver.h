@@ -1216,8 +1216,10 @@ int findMin(vector<int>& nums) {
 int numberOfSubmatrices(vector<vector<char>>& grid) {
     int row=grid.size();
     int col=grid[0].size();
+
     vector<vector<int>> prefX(row+1,vector<int> (col+1,0));
     vector<vector<int>> prefY(row+1,vector<int> (col+1,0));
+    
     int count=0;
     for(int i=0;i<row;i++){
         for(int j=0;j<col;j++){
