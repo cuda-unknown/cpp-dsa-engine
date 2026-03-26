@@ -1232,6 +1232,18 @@ int numberOfSubmatrices(vector<vector<char>>& grid) {
     return count;
 }
 
+//#744 Find Smallest Letter Greater Than Target
+char nextGreatestLetter(vector<char>& letters, char target) {
+    int l=0,r=letters.size()-1;
+    int n=letters.size();
+    if(target>=letters[r])  return letters[0];
+    while(l<=r){
+        int m=l+(r-l)/2;
+        if(letters[m]>target) r=m-1;
+        else  l=m+1;
+    }
+    return letters[l];
+}
 
 
 

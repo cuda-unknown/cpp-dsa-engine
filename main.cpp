@@ -77,6 +77,7 @@ void showMenu() {
     cout << "70. Valid Perfect Square"<<endl;
     cout << "71. Find Minimum in Rotated Sorted Array"<<endl;
     cout << "72. Count Submatrices With Equal Frequency of X and Y"<<endl;
+    cout << "73. Find Smallest Letter Greater Than Target"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -1089,7 +1090,20 @@ int main() {
         break;
     }
 
-    //
+    //#744 Find Smallest Letter Greater Than Target
+    case 73: {
+        vector<char> letters1={'c','f','j'};
+        char target1='a'; 
+        vector<char> letters2={'x','y','y','z'};
+        char target2='z';
+
+        cout<<"--- Find Smallest Letter Greater Than Target ---"<<endl;
+    
+        cout<<"Test 1 | Target: "<<target1<<" -> Result: "<<nextGreatestLetter(letters1,target1)<<" (Expected: c)"<<endl;
+        cout<<"Test 2 | Target: "<<target2<<" -> Result: "<<nextGreatestLetter(letters2, target2)<<" (Expected: x)"<<endl;
+    
+        break;
+    }
 
     
     default: {
