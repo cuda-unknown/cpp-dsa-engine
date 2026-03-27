@@ -1245,6 +1245,35 @@ char nextGreatestLetter(vector<char>& letters, char target) {
     return letters[l];
 }
 
+//#374 Guess Number Higher or Lower
+class Guess{
+    private: 
+    int targetNumber=6; 
+    int guess(int num){
+    if(num==targetNumber) return 0;
+    if(num>targetNumber) return -1;
+    return 1;
+    }
+
+    public:
+    int guessNumber(int n) {
+        int l=1,r=n;
+        while(l<=r){
+            int m=l+(r-l)/2;
+            int ans=guess(m);
+            if(ans==0) return m;
+            else if(ans==-1) r=m-1;
+            else l=m+1;
+        }
+        return -1;
+    }
+};
+
+
+
+
+
+
 
 
 #endif

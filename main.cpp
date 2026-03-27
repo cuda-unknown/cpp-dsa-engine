@@ -78,6 +78,7 @@ void showMenu() {
     cout << "71. Find Minimum in Rotated Sorted Array"<<endl;
     cout << "72. Count Submatrices With Equal Frequency of X and Y"<<endl;
     cout << "73. Find Smallest Letter Greater Than Target"<<endl;
+    cout << "74. Guess Number Higher or Lower"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -1105,6 +1106,20 @@ int main() {
         break;
     }
 
+    //#374 Guess Number Higher or Lower
+    case 74: {
+        Guess solver;
+        int n=10;
+        int targetNumber=6; 
+        cout<<"--- Easy: Guess Number Higher or Lower (#374) ---"<<endl;
+        cout<<"Search Range: 1 to "<<n<<endl;
+        cout<<"Hidden Target: "<<targetNumber<<endl;
+
+        int result=solver.guessNumber(n);
+        cout<<"Engine Result: Found "<<result<<endl;
+    
+        break;
+    }
     
     default: {
         cout<<"Invalid choice!"<<endl;
