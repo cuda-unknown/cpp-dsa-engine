@@ -79,6 +79,7 @@ void showMenu() {
     cout << "72. Count Submatrices With Equal Frequency of X and Y"<<endl;
     cout << "73. Find Smallest Letter Greater Than Target"<<endl;
     cout << "74. Guess Number Higher or Lower"<<endl;
+    cout << "75. First Bad Version"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -1121,6 +1122,18 @@ int main() {
         break;
     }
     
+    //#278 First Bad Version
+    case 75: {
+        Api solver;
+        int n = 5;
+    cout << "--- Easy: First Bad Version (#278) ---" << endl;
+    cout << "Total Versions: " << n << endl;
+
+    int result = solver. firstBadVersion(n);
+    cout << "Engine Result: First Bad Version is " << result << endl;
+    break;
+    }
+
     default: {
         cout<<"Invalid choice!"<<endl;
         break;
