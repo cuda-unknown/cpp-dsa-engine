@@ -80,6 +80,7 @@ void showMenu() {
     cout << "73. Find Smallest Letter Greater Than Target"<<endl;
     cout << "74. Guess Number Higher or Lower"<<endl;
     cout << "75. First Bad Version"<<endl;
+    cout << "76. Peak Index in a Mountain Array"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -1126,13 +1127,26 @@ int main() {
     case 75: {
         Api solver;
         int n = 5;
-    cout << "--- Easy: First Bad Version (#278) ---" << endl;
-    cout << "Total Versions: " << n << endl;
+        cout<<"--- First Bad Version ---"<<endl;
+        cout<<"Total Versions: "<<n<<endl;
 
-    int result = solver. firstBadVersion(n);
-    cout << "Engine Result: First Bad Version is " << result << endl;
-    break;
+        int result=solver.firstBadVersion(n);
+        cout<<"Engine Result: First Bad Version is "<<result<<endl;
+        break;
     }
+
+    //#852 Peak Index in a Mountain Array
+    case 76: {
+        vector<int> mountain={0,2,4,8,10,5,2,1};
+        cout<<"--- Peak Index in Mountain Array ---"<<endl;
+        cout<<"Array:";
+        for(int i:mountain) cout<<i<<" ";
+        cout<<endl;
+        int peakIndex=peakIndexInMountainArray(mountain);
+        cout<<"Peak Index  "<<peakIndex<<endl;
+        break;
+    }
+
 
     default: {
         cout<<"Invalid choice!"<<endl;
