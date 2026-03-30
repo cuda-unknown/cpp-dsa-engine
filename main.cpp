@@ -81,6 +81,7 @@ void showMenu() {
     cout << "74. Guess Number Higher or Lower"<<endl;
     cout << "75. First Bad Version"<<endl;
     cout << "76. Peak Index in a Mountain Array"<<endl;
+    cout << "77. Maximum 69 Number"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -1147,6 +1148,16 @@ int main() {
         break;
     }
 
+    //#1323 Maximum 69 Number
+    case 77: {
+        int num=9669;
+        cout<<"--- Maximum 69 Number ---"<<endl;
+        cout<<"Original: "<<num<<endl;
+    
+        int result=maximum69Number(num);
+        cout<<"Engine Result (Maximized): "<<result<<endl;
+        break;
+    }
 
     default: {
         cout<<"Invalid choice!"<<endl;
