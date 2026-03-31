@@ -82,6 +82,7 @@ void showMenu() {
     cout << "75. First Bad Version"<<endl;
     cout << "76. Peak Index in a Mountain Array"<<endl;
     cout << "77. Maximum 69 Number"<<endl;
+    cout << "78. Isomorphic Strings"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -1158,6 +1159,20 @@ int main() {
         cout<<"Engine Result (Maximized): "<<result<<endl;
         break;
     }
+
+    //#205 Isomorphic Strings
+    case 78: {
+        string s="paper",t="title";
+    
+        cout<<"--- Isomorphic Strings ---"<<endl;
+        cout<<"Strings: "<<s<<" & "<<t<<endl;
+    
+        if(isIsomorphic(s,t)) cout<<"Result: True (Isomorphic)"<<endl;
+        else cout<<"Result: False (Not Isomorphic)"<<endl;
+    
+        break;
+    }
+
 
     default: {
         cout<<"Invalid choice!"<<endl;
