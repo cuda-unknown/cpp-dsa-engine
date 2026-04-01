@@ -8,6 +8,7 @@
 #include<iomanip>
 #include<climits>
 #include<stack>
+#include<sstream>
 
 using namespace std;
 
@@ -1325,5 +1326,26 @@ bool isIsomorphic(string s, string t) {
     return true;
 }
 
+//#290 Word Pattern
+bool wordPattern(string pattern, string s) {
+    vector<string> words;
+    stringstream ss(s);
+    string word;
+    while (ss>>word) {
+        words.push_back(word);
+    }
+
+    if(words.size()!=pattern.length()) return false;
+
+    unordered_map<char,int> mapP;
+    unordered_map<string,int> mapS;
+
+    for(int i=0;i<pattern.length();i++){
+        if(mapP[pattern[i]]!=mapS[words[i]]) return false;
+        mapP[pattern[i]]=i+1;
+        mapS[words[i]]=i+1;
+    }
+    return true;
+}
 
 #endif

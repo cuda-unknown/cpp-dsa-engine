@@ -83,6 +83,7 @@ void showMenu() {
     cout << "76. Peak Index in a Mountain Array"<<endl;
     cout << "77. Maximum 69 Number"<<endl;
     cout << "78. Isomorphic Strings"<<endl;
+    cout << "79. Word Pattern"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -1173,7 +1174,15 @@ int main() {
         break;
     }
 
+    //#290 Word Pattern
+    case 79: {
+        string pattern="abba";
+        string s="dog cat cat dog";
+        cout<<"Test: "<<(wordPattern(pattern,s) ? "Pass (True)" : "Fail")<<endl;
+        break;
+    }
 
+    
     default: {
         cout<<"Invalid choice!"<<endl;
         break;
