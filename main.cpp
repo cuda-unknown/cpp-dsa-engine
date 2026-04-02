@@ -84,6 +84,7 @@ void showMenu() {
     cout << "77. Maximum 69 Number"<<endl;
     cout << "78. Isomorphic Strings"<<endl;
     cout << "79. Word Pattern"<<endl;
+    cout << "80. Group Anagram"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -1182,6 +1183,20 @@ int main() {
         break;
     }
 
+    //#49 Group Anagrams
+    case 80: {
+        vector<string> input={"eat","tea","tan","ate","nat","bat"};
+
+        vector<vector<string>> result=groupAnagrams(input);
+        cout<<"Grouped Anagrams:"<<endl;
+        for (auto group : result) {
+            cout<<"[ ";
+            for (string word : group) {
+                cout<<word<<" ";
+            }
+            cout<<"]"<<endl;
+        }
+    }
     
     default: {
         cout<<"Invalid choice!"<<endl;
