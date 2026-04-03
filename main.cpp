@@ -85,6 +85,7 @@ void showMenu() {
     cout << "78. Isomorphic Strings"<<endl;
     cout << "79. Word Pattern"<<endl;
     cout << "80. Group Anagram"<<endl;
+    cout << "81. Top K Frequent Elements"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -1198,6 +1199,21 @@ int main() {
         }
     }
     
+    //#347 Top K Frequent Elements
+    case 81: {
+        vector<int> nums={1,1,1,2,2,3};
+        int k=2;
+    
+        vector<int> result=topKFrequent(nums,k);
+    
+        cout<<" (Expected [1, 2]): ";
+        for(int x : result) cout<<x<<" ";
+        cout<<endl;
+        break;
+    }
+
+
+
     default: {
         cout<<"Invalid choice!"<<endl;
         break;

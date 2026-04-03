@@ -1363,5 +1363,30 @@ vector<vector<string>> groupAnagrams(vector<string>& strs) {
     return result;
 }
 
+//#347 Top K Frequent Elements
+vector<int> topKFrequent(vector<int>& nums, int k) {
+    int n=nums.size();
+    unordered_map<int,int> counts;
+    for(int n : nums) counts[n]++;
+    vector<vector<int>> buckets(n+1);
+
+    for (auto const& p : counts) {
+        int val=p.first;   
+        int freq=p.second;
+        buckets[freq].push_back(val);
+    }
+
+    vector<int> res;
+    for(int i=n;i>=1 && res.size()<k;i--){
+        for(int num : buckets[i]){
+            res.push_back(num);
+            if(res.size()==k) return res;
+        }
+    }
+    return res;
+}
+
+
+
 
 #endif
