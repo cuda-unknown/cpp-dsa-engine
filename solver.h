@@ -1386,6 +1386,23 @@ vector<int> topKFrequent(vector<int>& nums, int k) {
     return res;
 }
 
+//#128 Longest Consecutive Sequence
+int longestConsecutive(vector<int>& nums) {
+    unordered_set<int> s(nums.begin(),nums.end());
+    int longest=0;
+    for(int i:s){
+        if(s.find(i-1)==s.end()){
+            int curr=i;
+            int currStreak=1;
+            while(s.find(curr+1)!=s.end()){
+                curr+=1;
+                currStreak+=1;
+            }
+            longest=max(longest,currStreak);
+        }
+    }
+    return longest;
+}
 
 
 

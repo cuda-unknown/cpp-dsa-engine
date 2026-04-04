@@ -86,6 +86,7 @@ void showMenu() {
     cout << "79. Word Pattern"<<endl;
     cout << "80. Group Anagram"<<endl;
     cout << "81. Top K Frequent Elements"<<endl;
+    cout << "82. Longest Consecutive Sequence"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -1178,6 +1179,7 @@ int main() {
 
     //#290 Word Pattern
     case 79: {
+        cout<<"--- Word Pattern Engine ---"<<endl;
         string pattern="abba";
         string s="dog cat cat dog";
         cout<<"Test: "<<(wordPattern(pattern,s) ? "Pass (True)" : "Fail")<<endl;
@@ -1187,7 +1189,7 @@ int main() {
     //#49 Group Anagrams
     case 80: {
         vector<string> input={"eat","tea","tan","ate","nat","bat"};
-
+        cout<<"--- Group Anagram ---"<<endl;
         vector<vector<string>> result=groupAnagrams(input);
         cout<<"Grouped Anagrams:"<<endl;
         for (auto group : result) {
@@ -1203,7 +1205,8 @@ int main() {
     case 81: {
         vector<int> nums={1,1,1,2,2,3};
         int k=2;
-    
+        
+        cout<<"--- Top K Freaquent Elements ---"<<endl;
         vector<int> result=topKFrequent(nums,k);
     
         cout<<" (Expected [1, 2]): ";
@@ -1212,7 +1215,15 @@ int main() {
         break;
     }
 
+    //#128 Longest Consecutive Sequence
+    case 82: {
+        vector<int> nums={0,3,7,2,5,8,4,6,0,1};
+        int result=longestConsecutive(nums);
+        cout<<"Longest Consecutive Sequence "<<result<<endl;
+        break;
+    }
 
+    
 
     default: {
         cout<<"Invalid choice!"<<endl;
