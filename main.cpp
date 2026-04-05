@@ -87,6 +87,7 @@ void showMenu() {
     cout << "80. Group Anagram"<<endl;
     cout << "81. Top K Frequent Elements"<<endl;
     cout << "82. Longest Consecutive Sequence"<<endl;
+    cout << "83. Summary Ranges"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -1223,6 +1224,19 @@ int main() {
         break;
     }
 
+    //#228 Summary Ranges
+    case 83: {
+        vector<int> nums={0,1,2,4,5,7};
+        vector<string> res=summaryRanges(nums);
+
+        cout<<"Summary Ranges: [ ";
+        for(const string& s : res){
+            cout<<"\""<<s<<"\" ";
+        }
+        cout<<"]"<<endl;
+        break;
+    }
+    
     
 
     default: {
