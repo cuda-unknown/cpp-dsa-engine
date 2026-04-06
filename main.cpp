@@ -88,6 +88,7 @@ void showMenu() {
     cout << "81. Top K Frequent Elements"<<endl;
     cout << "82. Longest Consecutive Sequence"<<endl;
     cout << "83. Summary Ranges"<<endl;
+    cout << "84. Happy Number"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -1218,6 +1219,7 @@ int main() {
 
     //#128 Longest Consecutive Sequence
     case 82: {
+        cout<<"--- Longest Consecutive Sequence Engine ---"<<endl;
         vector<int> nums={0,3,7,2,5,8,4,6,0,1};
         int result=longestConsecutive(nums);
         cout<<"Longest Consecutive Sequence "<<result<<endl;
@@ -1226,6 +1228,7 @@ int main() {
 
     //#228 Summary Ranges
     case 83: {
+        cout<<"--- Summary Range Engine ---"<<endl;
         vector<int> nums={0,1,2,4,5,7};
         vector<string> res=summaryRanges(nums);
 
@@ -1237,7 +1240,13 @@ int main() {
         break;
     }
     
-    
+    //#202 Happy Number 
+    case 84: {
+        int n1=19;
+        cout<<"--- Happy Number Engine ----"<<endl;
+        cout<<"Is "<<n1<<" happy? "<<(isHappy(n1) ? "Yes" : "No")<<endl;
+        break;
+    }
 
     default: {
         cout<<"Invalid choice!"<<endl;

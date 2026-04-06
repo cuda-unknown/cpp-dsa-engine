@@ -1420,5 +1420,28 @@ vector<string> summaryRanges(vector<int>& nums) {
     return result;
 }
 
+//#202 Happy Number
+int get(int n){
+    int sum=0;
+    while(n>0){
+        int d=n%10;
+        n=n/10;
+        sum+=d*d;
+    }
+    return sum;
+}
+    
+bool isHappy(int n) {
+    int slow=n;
+    int fast=get(n);
+    while(fast!=1 &&  slow!=fast){
+        slow=get(slow);
+        fast=get(get(fast));
+    }
+    return fast==1;
+}
+
+
+
 
 #endif
