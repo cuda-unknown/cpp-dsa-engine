@@ -89,6 +89,7 @@ void showMenu() {
     cout << "82. Longest Consecutive Sequence"<<endl;
     cout << "83. Summary Ranges"<<endl;
     cout << "84. Happy Number"<<endl;
+    cout << "85. Majority Element"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -1247,6 +1248,17 @@ int main() {
         cout<<"Is "<<n1<<" happy? "<<(isHappy(n1) ? "Yes" : "No")<<endl;
         break;
     }
+
+    //#169 Majority Element
+    case 85: {
+        cout<<"--- Majority Element Finder ---"<<endl;
+        vector<int>nums={2,2,1,1,1,2,2};
+        int result=majorityElement(nums);
+        cout<<"Our Majority Element is:"<<result<<endl;
+        break;
+    }
+
+
 
     default: {
         cout<<"Invalid choice!"<<endl;

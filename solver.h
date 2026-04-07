@@ -1442,6 +1442,11 @@ bool isHappy(int n) {
 }
 
 
+//#169 Majority Element
+int majorityElement(vector<int>& nums) {
+    sort(nums.begin(),nums.end());
+    return nums[nums.size()/2];
+}
 
 
 #endif
