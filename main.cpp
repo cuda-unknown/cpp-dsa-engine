@@ -90,6 +90,7 @@ void showMenu() {
     cout << "83. Summary Ranges"<<endl;
     cout << "84. Happy Number"<<endl;
     cout << "85. Majority Element"<<endl;
+    cout << "86. Find the Index of the First Occurrence in a String"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -1258,6 +1259,15 @@ int main() {
         break;
     }
 
+    //#28 Find the Index of the First Occurrence in a String
+    case 86: {
+        cout<<"--- Index of the First Occurrence in a String Engine ---"<<endl;
+        string h="sadbutsad",n ="sad";
+        cout<<"Result: "<<strStr(h,n)<<endl;
+        break;
+    }
+
+    
 
 
     default: {

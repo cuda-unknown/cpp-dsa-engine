@@ -1448,5 +1448,15 @@ int majorityElement(vector<int>& nums) {
     return nums[nums.size()/2];
 }
 
+//#28 Find the Index of the First Occurrence in a String
+int strStr(string haystack, string needle) {
+    int n=haystack.size();
+    int m=needle.size();
+    if(m>n) return -1;
+    for(int i=0;i<=n-m;i++){
+        if(haystack.substr(i,m)==needle) return i;
+    }
+    return -1;
+}
 
 #endif
