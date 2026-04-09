@@ -91,6 +91,7 @@ void showMenu() {
     cout << "84. Happy Number"<<endl;
     cout << "85. Majority Element"<<endl;
     cout << "86. Find the Index of the First Occurrence in a String"<<endl;
+    cout << "87. Insert Interval"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -1267,7 +1268,24 @@ int main() {
         break;
     }
 
-    
+    //#57 Insert Interval
+    case 87: {
+        vector<vector<int>> intervals={{1,2},{3,5},{6,7},{8,10},{12,16}};
+        vector<int> newInterval={4,8};
+
+        vector<vector<int>> result=insert(intervals,newInterval);
+
+        cout<<"--- Insert Interval Engine ---"<<endl;
+        cout<<"Interval={{1,2},{3,5},{6,7},{8,10},{12,16}}"<<endl;
+        cout<<"newInterval={4,8}"<<endl;
+        
+        cout<<"Merged Intervals: [ ";
+        for(const auto& interval : result){
+            cout<<"["<<interval[0]<<","<<interval[1]<<"] ";
+        }
+        cout<<"]"<<endl;
+        break;
+    }
 
 
     default: {
