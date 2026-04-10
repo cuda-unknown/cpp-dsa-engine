@@ -1481,7 +1481,17 @@ vector<vector<int>> insert(vector<vector<int>>& intervals, vector<int>& newInter
     return result;
 }
 
-
+//#1768 Merge Strings Alternately
+string mergeAlternately(string word1, string word2) {
+    int n=word1.size();
+    int m=word2.size();
+    string res="";
+    for(int i=0;i<max(n,m);i++){
+        if(i<n) res+=word1[i];
+        if(i<m) res+=word2[i];
+    }
+    return res;
+}
 
 
 

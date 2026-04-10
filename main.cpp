@@ -92,6 +92,7 @@ void showMenu() {
     cout << "85. Majority Element"<<endl;
     cout << "86. Find the Index of the First Occurrence in a String"<<endl;
     cout << "87. Insert Interval"<<endl;
+    cout << "88. Merge Strings Alternately"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -1287,6 +1288,13 @@ int main() {
         break;
     }
 
+    //#1768 Merge Strings Alternately
+    case 88: {
+        cout<<"--- Merge String Alternately ---"<<endl;
+        string w1="abc",w2="pqr";
+        cout<<"Result: "<<mergeAlternately(w1,w2)<<" (Expected: apbqcr)"<<endl;
+        break;
+    }
 
     default: {
         cout<<"Invalid choice!"<<endl;
