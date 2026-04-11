@@ -93,6 +93,7 @@ void showMenu() {
     cout << "86. Find the Index of the First Occurrence in a String"<<endl;
     cout << "87. Insert Interval"<<endl;
     cout << "88. Merge Strings Alternately"<<endl;
+    cout << "89. Maximum Subarray"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -1295,6 +1296,19 @@ int main() {
         cout<<"Result: "<<mergeAlternately(w1,w2)<<" (Expected: apbqcr)"<<endl;
         break;
     }
+
+    //#53 Maximum Subarray
+    case 89: {
+        cout<<"--- Maximum Subarray Finder ---"<<endl;
+        vector<int> nums={-2,1,-3,4,-1,2,1,-5,4};
+        for(int i=0;i<nums.size();i++) cout<<nums[i]<<" ";
+        cout<<endl;
+        int result=maxSubArray(nums);
+        cout<<"Result:"<<result<<endl;
+        break;
+    }
+
+
 
     default: {
         cout<<"Invalid choice!"<<endl;

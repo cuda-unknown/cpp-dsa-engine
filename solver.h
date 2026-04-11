@@ -1493,6 +1493,17 @@ string mergeAlternately(string word1, string word2) {
     return res;
 }
 
+//#53 Maximum Subarray
+int maxSubArray(vector<int>& nums) {
+    int res=nums[0];
+    int total=0;
+    for(int n:nums){
+        total+=n;
+        if(total>res) res=total;
+        if(total<0) total=0;
+    }
+    return res;
+}
 
 
 #endif
