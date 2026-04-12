@@ -94,6 +94,7 @@ void showMenu() {
     cout << "87. Insert Interval"<<endl;
     cout << "88. Merge Strings Alternately"<<endl;
     cout << "89. Maximum Subarray"<<endl;
+    cout << "90. Count Negative Numbers in a Sorted Matrix"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -1305,6 +1306,20 @@ int main() {
         cout<<endl;
         int result=maxSubArray(nums);
         cout<<"Result:"<<result<<endl;
+        break;
+    }
+
+    //#1351 Count Negative Numbers in a Sorted Matrix
+    case 90: {
+        cout<<"--- Count Negative Numbers in a Sorted Matrix Engine ---"<<endl;
+        vector<vector<int>> grid={
+            {4,3,2,-1},
+            {3,2,1,-1},
+            {1,1,-1,-2},
+            {-1,-1,-2,-3}
+        };
+        
+        cout<<"Total Negative Numbers: "<<countNegatives(grid)<<endl;
         break;
     }
 
