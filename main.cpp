@@ -95,6 +95,7 @@ void showMenu() {
     cout << "88. Merge Strings Alternately"<<endl;
     cout << "89. Maximum Subarray"<<endl;
     cout << "90. Count Negative Numbers in a Sorted Matrix"<<endl;
+    cout << "91. Arranging Coins#441 Arranging Coins"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -1322,6 +1323,16 @@ int main() {
         cout<<"Total Negative Numbers: "<<countNegatives(grid)<<endl;
         break;
     }
+
+
+    //#441 Arranging Coins
+    case 91:{
+        cout<<"--- Arranging Coins Engine ---"<<endl;
+        int n=5;
+        cout<<"Coins: "<<n<<" | Complete Rows: "<<arrangeCoins(n)<<endl;
+        break;
+    }
+
 
 
 
