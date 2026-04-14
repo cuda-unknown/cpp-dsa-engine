@@ -96,6 +96,7 @@ void showMenu() {
     cout << "89. Maximum Subarray"<<endl;
     cout << "90. Count Negative Numbers in a Sorted Matrix"<<endl;
     cout << "91. Arranging Coins#441 Arranging Coins"<<endl;
+    cout << "92. Remove Duplicates from Sorted Array II"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -1332,8 +1333,15 @@ int main() {
         cout<<"Coins: "<<n<<" | Complete Rows: "<<arrangeCoins(n)<<endl;
         break;
     }
-
-
+    
+    //#80 Remove Duplicates from Sorted Array II
+    case 92: {
+        cout<<"--- Remove Duplicates from Sorted Array II ----"<<endl;
+        vector<int> nums={1,1,1,2,2,3};
+        int result=removeDuplicates(nums);
+        cout<<"Result:"<<result<<endl;
+        break;
+    }
 
 
     default: {
