@@ -97,6 +97,7 @@ void showMenu() {
     cout << "90. Count Negative Numbers in a Sorted Matrix"<<endl;
     cout << "91. Arranging Coins#441 Arranging Coins"<<endl;
     cout << "92. Remove Duplicates from Sorted Array II"<<endl;
+    cout << "93. Contains Duplicate II"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -1343,6 +1344,15 @@ int main() {
         break;
     }
 
+    //#219 Contains Duplicate II
+    case 93: {
+        cout<<"--- Contains Duplicate II ---"<<endl;
+        vector<int> nums={1,2,3,1};
+        int k=3;
+
+        cout<<"Result: "<<(containsNearbyDuplicate(nums,k) ? "true" : "false")<<endl;
+        break;
+    }
 
     default: {
         cout<<"Invalid choice!"<<endl;

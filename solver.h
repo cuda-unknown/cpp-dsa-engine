@@ -1547,5 +1547,18 @@ int removeDuplicates(vector<int>& nums) {
     return i;
 }
 
+//#219 Contains Duplicate II
+bool containsNearbyDuplicate(vector<int>& nums, int k) {
+    unordered_map<int,int> s;
+    int n=nums.size();
+    for(int i=0;i<n;i++){
+        int curr=nums[i];
+        if(s.find(curr)!=s.end()){
+            if(i-s[curr] <=k) return true;
+        }
+        s[curr]=i;
+    }
+    return false;
+}
 
 #endif
