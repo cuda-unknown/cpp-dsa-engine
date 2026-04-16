@@ -98,6 +98,7 @@ void showMenu() {
     cout << "91. Arranging Coins#441 Arranging Coins"<<endl;
     cout << "92. Remove Duplicates from Sorted Array II"<<endl;
     cout << "93. Contains Duplicate II"<<endl;
+    cout << "94. Find Peak Element"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -1353,6 +1354,16 @@ int main() {
         cout<<"Result: "<<(containsNearbyDuplicate(nums,k) ? "true" : "false")<<endl;
         break;
     }
+
+    //#162 Find Peak Element
+    case 94: {
+        cout<<"--- Finding Peak Element Engine ---"<<endl;
+        vector<int> nums={1,2,1,3,5,6,4};
+        int result=findPeakElement(nums);
+        cout<<"Peak Element "<<result<<endl;
+        break;
+    }
+
 
     default: {
         cout<<"Invalid choice!"<<endl;
