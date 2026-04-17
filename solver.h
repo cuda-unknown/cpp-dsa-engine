@@ -1563,15 +1563,31 @@ bool containsNearbyDuplicate(vector<int>& nums, int k) {
 
 //#162 Find Peak Element
 int findPeakElement(vector<int>& nums) {
-        int n=nums.size()-1;
-        int low=0;
-        int high=n;
-        while(low<high){
-            int mid=low+(high-low)/2;
-            if(nums[mid]>nums[mid+1]) high=mid;
-            else low=mid+1;
-        }
-        return low;
+    int n=nums.size()-1;
+    int low=0;
+    int high=n;
+    while(low<high){
+        int mid=low+(high-low)/2;
+        if(nums[mid]>nums[mid+1]) high=mid;
+        else low=mid+1;
     }
+    return low;
+}
+
+//#66 Plus One
+vector<int> plusOne(vector<int>& digits) {
+    int d=digits.size();
+    for(int i=d-1;i>=0;i--){
+        if(digits[i]<9){
+            digits[i]++;
+            return digits;
+        }    
+        else digits[i]=0;
+    }
+    digits.insert(digits.begin(),1);
+    return digits;
+}
+
+
 
 #endif

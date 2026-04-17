@@ -99,6 +99,7 @@ void showMenu() {
     cout << "92. Remove Duplicates from Sorted Array II"<<endl;
     cout << "93. Contains Duplicate II"<<endl;
     cout << "94. Find Peak Element"<<endl;
+    cout << "95. Plus One"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -1364,6 +1365,18 @@ int main() {
         break;
     }
 
+    //#66 Plus One
+    case 95: {
+        cout<<"--- Plus One Engine ---"<<endl;
+        vector<int> digits={4,3,2,1};
+        vector<int> result=plusOne(digits);
+        cout<<"Result:";
+        for(int n:digits){
+            cout<<n<<" ";
+        }
+        cout<<endl;
+        break;
+    }
 
     default: {
         cout<<"Invalid choice!"<<endl;
