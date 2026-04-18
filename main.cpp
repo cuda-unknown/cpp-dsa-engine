@@ -100,6 +100,7 @@ void showMenu() {
     cout << "93. Contains Duplicate II"<<endl;
     cout << "94. Find Peak Element"<<endl;
     cout << "95. Plus One"<<endl;
+    cout << "96. Factorial Trailing Zeroes"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -1375,6 +1376,15 @@ int main() {
             cout<<n<<" ";
         }
         cout<<endl;
+        break;
+    }
+
+    //#172 Factorial Trailing Zeroes
+    case 96: {
+        cout<<"--- Factorial Trailing Zeroes Engine ---"<<endl;
+        int n=6;
+        int result=trailingZeroes(n);
+        cout<<"Result:"<<result<<endl;
         break;
     }
 
