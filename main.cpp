@@ -101,6 +101,7 @@ void showMenu() {
     cout << "94. Find Peak Element"<<endl;
     cout << "95. Plus One"<<endl;
     cout << "96. Factorial Trailing Zeroes"<<endl;
+    cout << "97. Is Subsequence"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -1387,6 +1388,19 @@ int main() {
         cout<<"Result:"<<result<<endl;
         break;
     }
+
+    //#392 Is Subsequence
+    case 97: {
+        cout<<"--- Is Subsequence Engine ---"<<endl;
+        string s="abc" ;
+        string t="ahbgdc";
+        cout<<"Result: "<<(isSubsequence(s,t) ? "true" : "false")<<endl;
+        break;
+    }
+
+
+
+    
 
     default: {
         cout<<"Invalid choice!"<<endl;
