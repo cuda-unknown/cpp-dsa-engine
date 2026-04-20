@@ -102,6 +102,7 @@ void showMenu() {
     cout << "95. Plus One"<<endl;
     cout << "96. Factorial Trailing Zeroes"<<endl;
     cout << "97. Is Subsequence"<<endl;
+    cout << "98. Minimum Size Subarray Sum"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -1398,8 +1399,17 @@ int main() {
         break;
     }
 
+    //#209 Minimum Size Subarray Sum
+    case 98: {
+        cout<<"--- Minimum Size Subarray Sum ---"<<endl;
+        vector<int> nums={2,3,1,2,4,3};
+        int target=7;
+        int result=minSubArrayLen(target,nums);
+        cout<<"Result:"<<result<<endl;
+        break;
+    }
 
-
+    
     
 
     default: {

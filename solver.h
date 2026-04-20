@@ -1608,6 +1608,26 @@ bool isSubsequence(string s, string t) {
     return i==s.size();
 }
 
+//#209 Minimum Size Subarray Sum
+int minSubArrayLen(int target, vector<int>& nums) {
+    int n=nums.size();
+    int i=0;
+    int j=0;
+    int sum=0;
+    int minLen=INT_MAX;
+
+    while(j<n){
+        sum+=nums[j];
+
+        while(sum>=target){
+            minLen= min(minLen,j-i+1);
+            sum-=nums[i];
+            i++;
+        }
+        j++;
+    }
+    return minLen==INT_MAX ? 0 : minLen;
+}
 
 
 #endif
