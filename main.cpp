@@ -103,6 +103,8 @@ void showMenu() {
     cout << "96. Factorial Trailing Zeroes"<<endl;
     cout << "97. Is Subsequence"<<endl;
     cout << "98. Minimum Size Subarray Sum"<<endl;
+    cout << "99. Check if Strings Can be Made Equal With Operations I"<<endl;
+    cout <<"100. Check if One String Swap Can Make Strings Equal "<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -1409,9 +1411,24 @@ int main() {
         break;
     }
 
-    //
+    ////#2839. Check if Strings Can be Made Equal With Operations I
+    case 99: {
+        cout<<"--- Check if Strings Can be Made Equal With Operations I Engine ---"<<endl;
+        string s1="abcd",s2="cdab";
+        bool result=canBeEqual(s1,s2);
+        cout<<"Result:"<<result<<endl;
+        break;
+    }
     
-    
+
+    //#1790 Check if One String Swap Can Make Strings Equal
+    case 100: {
+        cout<<"--- Check if One String Swap Can Make Strings Equal Engine ---"<<endl;
+        string s1="bank" ,s2="kanb";
+        bool result=areAlmostEqual(s1,s2);
+        cout<<"Result:"<<result<<endl;
+        break;
+    }
 
     default: {
         cout<<"Invalid choice!"<<endl;

@@ -1629,14 +1629,28 @@ int minSubArrayLen(int target, vector<int>& nums) {
     return minLen==INT_MAX ? 0 : minLen;
 }
 
-//
+//#2839. Check if Strings Can be Made Equal With Operations I
 bool canBeEqual(string s1, string s2) {
-        bool s02=s1[0]==s2[2] && s1[2]==s2[0];
-        bool b02=s1[0]==s2[0] && s1[2]==s2[2];
-        bool s13=s1[1]==s2[3] && s1[3]==s2[1];
-        bool b13=s1[1]==s2[1] && s1[3]==s2[3];
-        return ((s02 ||b02)&&(s13 || b13));
-    }
+    bool s02=s1[0]==s2[2] && s1[2]==s2[0];
+    bool b02=s1[0]==s2[0] && s1[2]==s2[2];
+    bool s13=s1[1]==s2[3] && s1[3]==s2[1];
+    bool b13=s1[1]==s2[1] && s1[3]==s2[3];
+    return ((s02 ||b02)&&(s13 || b13));
+}
 
+//#1790 Check if One String Swap Can Make Strings Equal
+bool areAlmostEqual(string s1, string s2) {
+    if(s1==s2) return true;
+
+    int i=0, n=max(s1.size(),s2.size());  
+    while(i<n && s1[i]==s2[i]) i++;
+
+    int j=i+1;
+    while(j<n && s1[j]==s2[j]) j++;
+        
+    swap(s1[i],s1[j]);
+
+    return s1==s2;
+}
     
 #endif
