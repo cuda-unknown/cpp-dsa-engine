@@ -105,6 +105,7 @@ void showMenu() {
     cout << "98. Minimum Size Subarray Sum"<<endl;
     cout << "99. Check if Strings Can be Made Equal With Operations I"<<endl;
     cout <<"100. Check if One String Swap Can Make Strings Equal "<<endl;
+    cout <<"101. Integer to Roman"<<endl; 
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -1427,6 +1428,16 @@ int main() {
         string s1="bank" ,s2="kanb";
         bool result=areAlmostEqual(s1,s2);
         cout<<"Result:"<<result<<endl;
+        break;
+    }
+    
+    //#12 Integer to Roman
+    case 101: {
+        int testNum=1994;
+    
+        cout<<"--- Roman Numeral Engine ---"<<endl;
+        cout<<"Input: "<<testNum<<endl;
+        cout<<"Result: "<<intToRoman(testNum)<<endl;
         break;
     }
 

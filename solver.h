@@ -9,6 +9,7 @@
 #include<climits>
 #include<stack>
 #include<sstream>
+#include <utility>
 
 using namespace std;
 
@@ -1653,4 +1654,29 @@ bool areAlmostEqual(string s1, string s2) {
     return s1==s2;
 }
     
+//#12 Integer to Roman
+string intToRoman(int num) {
+    const vector<pair<int,string>> valueSymbols{
+        {1000,"M"}, {900,"CM"}, {500,"D"}, {400,"CD"}, {100,"C"},
+        {90,"XC"},  {50,"L"},   {40,"XL"}, {10,"X"},   {9,"IX"},
+        {5,"V"},    {4,"IV"},   {1,"I"}
+    };
+    string res;
+
+    for(const auto& p : valueSymbols){
+        int value=p.first;
+        string symbol=p.second;
+            
+        if(num==0) break;
+                
+        while(num>=value){
+            res+=symbol;
+            num-=value;
+        }
+    }
+    return res;  
+}
+
+
+
 #endif
