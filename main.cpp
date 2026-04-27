@@ -106,6 +106,7 @@ void showMenu() {
     cout << "99. Check if Strings Can be Made Equal With Operations I"<<endl;
     cout <<"100. Check if One String Swap Can Make Strings Equal "<<endl;
     cout <<"101. Integer to Roman"<<endl; 
+    cout <<"102. 3Sum"<<endl;
     cout << "0. Exit" <<endl;
     cout << "Enter choice: ";
 }
@@ -1440,6 +1441,28 @@ int main() {
         cout<<"Result: "<<intToRoman(testNum)<<endl;
         break;
     }
+
+    //#15. 3Sum
+    case 102: {
+        vector<int> nums={-1,0,1,2,-1,-4};
+    
+        vector<vector<int>> result=threeSum(nums);
+    
+        cout<<"--- 3Sum Engine ---"<<endl;
+        cout<<"Unique Triplets: "<<endl;
+        for(const auto& triplet : result){
+            cout<<"[ ";
+            for(int x : triplet){
+                cout<<x<<" ";
+            }
+            cout<<"]"<<endl;
+        }
+        break;
+    }
+
+
+
+
 
     default: {
         cout<<"Invalid choice!"<<endl;

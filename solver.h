@@ -9,7 +9,8 @@
 #include<climits>
 #include<stack>
 #include<sstream>
-#include <utility>
+#include<utility>
+#include<set>
 
 using namespace std;
 
@@ -1677,6 +1678,31 @@ string intToRoman(int num) {
     return res;  
 }
 
+//#15. 3Sum
+vector<vector<int>> threeSum(vector<int>& nums) {
+    sort(nums.begin(),nums.end());
+    set<vector<int>> st;
+    int n=nums.size();
+    for(int i=0;i<n;i++){
+        if(i>0 && nums[i-1]==nums[i])continue;
+        int j=i+1,k=n-1;
+        while(j<k){
+            long long sum=nums[i]+nums[j]+nums[k];
+            if(sum==0){
+                vector<int> temp={nums[i],nums[j],nums[k]};
+                sort(temp.begin(),temp.end());
+                st.insert(temp);
+                j++;
+                k--;
+                while(j<k && nums[j-1]==nums[j])j++;
+                while(j<k && nums[k]==nums[k+1])k--;
+            }else if(sum>0)k--;
+            else j++;
+        }
+    }
+    vector<vector<int>> ans(st.begin(),st.end());
+    return ans;
+}
 
 
 #endif
